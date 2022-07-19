@@ -1,0 +1,54 @@
+ignore-empty-password
+# indicator
+# no-unlock-indicator
+# daemonize
+
+clock
+#timestr=%R
+datestr=%a, %e of %B
+
+screenshots
+
+font=JetBrains Mono
+font-size=20
+fade-in=0.15
+
+effect-blur=10x15
+effect-scale=0.1
+
+indicator
+indicator-radius=100
+indicator-thickness=9
+indicator-caps-lock
+
+key-hl-color=880033
+
+separator-color=00000000
+
+inside-color=00000088
+inside-clear-color=ffd20400
+inside-caps-lock-color=009ddc00
+inside-ver-color=d9d8d800
+inside-wrong-color=ee2e2400
+
+ring-color=455a64
+ring-clear-color=231f20D9
+ring-caps-lock-color=231f20D9
+ring-ver-color=231f20D9
+ring-wrong-color=231f20D9
+
+line-color=00000000
+line-clear-color=ffd204FF
+line-caps-lock-color=009ddcFF
+line-ver-color=d9d8d8FF
+line-wrong-color=ee2e24FF
+
+text-clear-color=ffd20400
+text-ver-color=d9d8d800
+text-wrong-color=ee2e2400
+
+bs-hl-color=ee2e24FF
+caps-lock-key-hl-color=ffd204FF
+caps-lock-bs-hl-color=ee2e24FF
+disable-caps-lock-text
+text-caps-lock-color=009ddc
