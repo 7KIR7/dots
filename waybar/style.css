@@ -1,6 +1,8 @@
 * {
   font-family: "JetBrainsMono Nerd Font", Roboto, Helvetica, Arial, sans-serif;
   padding: 1px 5px;
+  color: white;
+  
 }
 
 window#waybar {
@@ -9,6 +11,7 @@ window#waybar {
   font-weight: 600;
   background: transparent;
   border-radius: 40px;
+  
 }
 
 window#waybar.hidden {
@@ -55,7 +58,7 @@ label:focus {
 
 #tags button {
   background-color: #24283b;
-  color: #c0caf5;
+  color: white;
   border-radius: 15px;
   margin: 0 3px;
 }
@@ -91,18 +94,19 @@ label:focus {
 .modules-right {
   margin-right: 5px;
 }
-
+/*ANIMATIONS*/
 @keyframes animate {
-  30% {
-    background: linear-gradient(45deg, gray, green, blue, red);
-  }
-  60% {
-    background: linear-gradient(45deg, green, blue, red, gray);
-  }
-  90% {
-    background: linear-gradient(45deg, blue, red, gray, green);
-  }
+	0% {
+		background-position: 0% 50%;
+	}
+	50% {
+		background-position: 100% 50%;
+	}
+	100% {
+		background-position: 0% 50%;
+	}
 }
+
 
 /*BORDER RADIUS*/
 #custom-launcher,
@@ -158,10 +162,11 @@ label:focus {
 }
 
 #workspaces {
-  background: linear-gradient(-45deg, #009acb, #123456, #9acb4a);
-  border-radius: 20px;
-  margin: 1 7px;
-
+  border-radius: 10px;
+  font-size: 15px;
+  background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
+  background-size: 400% 400%;
+  animation: animate 15s ease infinite;
 }
 
 #mpd {
