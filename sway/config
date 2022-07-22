@@ -17,7 +17,7 @@
 set $mod Mod4
 
 # Set wallpaper:
-exec swaybg -i ~/Pictures/wallpapers/2.png
+exec swaybg -i ~/Pictures/wallpapers/wp1.jpg
 
 #start always
 #exec_always --no-startup-id bash ~/.config/polybar/launch.sh --forest
@@ -129,7 +129,7 @@ bindsym $mod+Shift+b move container to workspace back_and_forth; workspace back_
 # split orientation
 bindsym $mod+h split h;exec notify-send 'tile horizontally'
 bindsym $mod+v split v;exec notify-send 'tile vertically'
-bindsym $mod+q split toggle
+#bindsym $mod+q split toggle
 
 # toggle fullscreen mode for the focused container
 bindsym $mod+f fullscreen toggle
@@ -294,25 +294,11 @@ mode "resize" {
 }
 
 # Lock screen
-bindsym $mod+9 exec --no-startup-id "swaylock \
-	--screenshots \
-	--clock \
-	--indicator \
-	--indicator-radius 100 \
-	--indicator-thickness 7 \
-	--effect-blur 7x7 \
-	--effect-vignette 0.5:0.5 \
-	--ring-color bb00cc \
-	--key-hl-color 880033 \
-	--line-color 00000000 \
-	--inside-color 00000088 \
-	--separator-color 00000000 \
-	--grace 0.5 \
-	--fade-in 0.2"
+bindsym $mod+9 exec swaylock
 
 # Autostart applications
 exec --no-startup-id /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
-exec --no-startup-id nitrogen --restore; sleep 1;
+#exec --no-startup-id nitrogen --restore; sleep 1;
 #exec --no-startup-id manjaro-hello
 exec --no-startup-id nm-applet
 exec --no-startup-id xfce4-power-manager
@@ -452,3 +438,6 @@ input type:touchpad {
 bindsym Print exec IMG=~/Pictures/screenshot_$(date +%Y%m%d_%H%M%S).png && grim $IMG && wl-copy < $IMG && notify-send "Screenshot saved"
 bindsym Shift+Print exec IMG=~/Pictures/screenshot_$(date +%Y%m%d_%H%M%S).png && grim -g "$(slurp)" $IMG && wl-copy < $IMG && notify-send "Screenshot saved"
 
+set $screenrecord wf-recorder -g "$(slurp)" -f ~/Videos/wf-recorder/mov-$(date +"%Y-%m-%d--%H-%M-%S.mp4")
+bindsym Shift+Control+Print exec $screenrecord
+bindsym Shift+Control+BackSpace exec killall -s SIGINT wf-recorder && notify-send "Recording Complete"
