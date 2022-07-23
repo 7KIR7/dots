@@ -413,7 +413,7 @@ mode "$mode_gaps_outer" {
     bindsym XF86AudioPlay exec mpc toggle
     bindsym XF86AudioStop exec mpc stop
     bindsym XF86AudioNext exec mpc next
-    bindsym XF86AudioPrev exec mpc previous
+    bindsym XF86AudioPrev exec mpc prev
 #
 # Backlight
 #
