@@ -70,7 +70,7 @@
         "format": "⏲ {:%I:%M %p}",
         "format-alt": " {:%a, %b %d}" // Icon: calendar-alt
     },
-
+ 
     "cpu": {
         "interval": 5,
         "format": "  {usage}% ({load})", // Icon: microchip
