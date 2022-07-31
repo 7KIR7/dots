@@ -3,7 +3,7 @@
 
 # Set mod key (Mod1=<Alt>, Mod4=<Super>)
 set $mod Mod4
-
+            
 #start always    
 exec_always --no-startup-id xinput set-prop 13 311 0
 exec_always --no-startup-id bash ~/.config/polybar/launch.sh --forest
