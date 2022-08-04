@@ -8,7 +8,7 @@ set $mod Mod4
 exec_always --no-startup-id xinput set-prop 13 311 0
 exec_always --no-startup-id bash ~/.config/polybar/launch.sh --forest
 exec_always --no-startup-id picom --experimental-backend
-
+          
 #dunst
 bindsym $mod+o exec notify-send -t 3500 "$(date '+%a %b %e %r')"
 bindsym $mod+i exec notify-send "$(curl wttr.in/pokhara?format=3)"
