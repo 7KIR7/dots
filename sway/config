@@ -1,4 +1,4 @@
-# Initial Setup    
+# Initial Setup 
 # exec ~/set_once.sh
 
 # Config for sway
@@ -13,16 +13,21 @@
 
 #*****************************************************************
 
+assign [class="VirtualBox Machine"] workspace 6
+
 # Set mod key (Mod1=<Alt>, Mod4=<Super>)
 set $mod Mod4
 
 # Set wallpaper:
-exec swaybg -i ~/Pictures/wallpapers/wp1.jpg
+#exec swaybg -i ~/Pictures/wallpapers/wp1.jpg
+exec_always --no-startup-id ~/.azotebg
 
 #start always
 #exec_always --no-startup-id bash ~/.config/polybar/launch.sh --forest
 #exec_always --no-startup-id picom --experimental-backend
 exec_always --no-startup-id dunst
+#audio gain easyeffects
+exec_always --no-startup-id easyeffects --gapplication-service
 
 #dunst
 bindsym $mod+o exec notify-send -t 3500 "$(date '+%a %b %e %r')"
@@ -37,7 +42,7 @@ bindsym $mod+Shift+Home exec reboot
 # workspace_layout tabbed <stacking|tabbed>
 
 # Configure border style <normal|1pixel|pixel xx|none|pixel>
-default_border pixel 1
+default_border pixel 2.5
 default_floating_border normal
 
 # Hide borders
@@ -47,7 +52,7 @@ hide_edge_borders none
 bindsym $mod+u border none
 bindsym $mod+y border pixel 1
 bindsym $mod+n border normal
-client.focused "#9f1209" "#4B0082" "#ffffff" "#9f1209"
+client.focused "#9f1209" "#3385F5" "#ffffff" "#9f1209"
 # Font for window titles. Will also be used by the bar unless a different font
 # is used in the bar {} block below.
 font xft:URWGothic-Book 11
@@ -57,6 +62,7 @@ floating_modifier $mod
 
 # start a terminal
 bindsym $mod+Return exec kitty
+bindsym $mod+Shift+Return exec fish
 
 # kill focused window
 bindsym $mod+F4 kill
@@ -306,7 +312,7 @@ exec --no-startup-id pamac-tray
 exec --no-startup-id clipit
 # exec --no-startup-id blueman-applet
 # exec_always --no-startup-id sbxkb
-exec --no-startup-id start_conky_green
+#exec --no-startup-id start_conky_green
 #exec --no-startup-id start_conky_grey
 exec --no-startup-id xautolock -time 10 -locker blurlock
 exec_always --no-startup-id ff-theme-util
@@ -348,7 +354,7 @@ exec_always --no-startup-id fix_xcursor
 #############################
 
 # Set inner/outer gaps
-gaps inner 7
+gaps inner 3
 gaps outer 1
 
 # Additionally, you can issue commands with the following syntax. This is useful to bind keys to changing the gap size.
@@ -432,12 +438,15 @@ exec swayidle -w \
 # Read `man 5 sway-input` for more information about this section.
 input type:touchpad {
     tap enabled
+    scroll_method two_finger edge
 #    dwt disabled
 }
 
 bindsym Print exec IMG=~/Pictures/screenshot_$(date +%Y%m%d_%H%M%S).png && grim $IMG && wl-copy < $IMG && notify-send "Screenshot saved"
 bindsym Shift+Print exec IMG=~/Pictures/screenshot_$(date +%Y%m%d_%H%M%S).png && grim -g "$(slurp)" $IMG && wl-copy < $IMG && notify-send "Screenshot saved"
 
-set $screenrecord wf-recorder -g "$(slurp)" -f ~/Videos/wf-recorder/mov-$(date +"%Y-%m-%d--%H-%M-%S.mp4")
-bindsym Shift+Control+Print exec $screenrecord
+set $screenrecord wf-recorder -g "$(slurp)" --audio=alsa_output.pci-0000_08_00.6.analog-stereo.monitor -f ~/Videos/wf-recorder/mov-$(date +"%Y-%m-%d--%H-%M-%S.mp4")
+bindsym Shift+Control+Print exec $screenrecord && echo "" || echo " "
 bindsym Shift+Control+BackSpace exec killall -s SIGINT wf-recorder && notify-send "Recording Complete"
+
+
