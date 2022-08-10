@@ -1,0 +1,198 @@
+{
+    "layer": "bottom",
+    "position": "top",
+    "height": 14,
+
+    "modules-left": ["custom/launcher", "sway/workspaces", "sway/mode", "cpu", "memory", "disk", "custom/recorder"],
+    "modules-center": ["mpd"], //sway/window
+    "modules-right": ["tray", "backlight", "idle_inhibitor", "pulseaudio", "network", "battery", "clock", "custom/power"],
+    "sway/mode": {
+        "format": " {}"
+    },
+    "sway/workspaces": {
+        "format": "{icon}",
+        "format-icons": {
+            "1": "♠",
+            "2": "♥",
+            "3": "♦",
+            "4": "♣",
+            "5": "☣",
+            "6": "☢",
+            "7": "⌘",
+            "8": "⌬",
+            "urgent": "",
+            "focused": "",
+            "default": ""
+        }
+    },
+
+    "custom/launcher": {
+        "format":"☯",
+        "on-click": "exec wofi -c ~/.config/wofi/config -I",
+        "tooltip": false,
+    },
+
+    "sway/window": {
+        "max-length": 25,
+        "tooltip": false
+    },
+    "clock": {
+        "interval": 1,
+        "locale": "C", 
+        "format": "{:%I:%M %p}",
+        "format-alt": " {:%a, %b %d}" // Icon: calendar-alt
+    },
+    "cpu": {
+        "interval": 10,
+        "format": "{usage}% ",
+        "max-length": 10,
+        "on-click": "kitty -e 'htop'"
+    },
+    "memory": {
+        "interval": 30,
+        "format": "{used:0.2f}GB ",
+        "max-length": 10,
+        "tooltip": false,
+        "warning": 70,
+        "critical": 90
+    },
+
+    "battery": {
+        "states": {
+            // "good": 95,
+            "warning": 30,
+            "critical": 15
+        },
+        "format": "{capacity}% {icon}",
+        "format-charging": "{capacity}% ⚡",
+        "format-plugged": "{capacity}% ",
+        // "format-good": "", // An empty format will hide the module
+        // "format-full": "",
+        "format-icons": ["", "", "", "", ""]
+    },
+
+    "temperature": {
+        "critical-threshold": 80,
+	"format-critical": "{temperatureC}° ",
+	"format": "{temperatureC}° "
+    },
+    "network": {
+        "format": "{icon}",
+        "format-alt": "{ipaddr}/{cidr} {icon}",
+        "format-alt-click": "click-right",
+        "format-wifi": "直  ({signalStrength}%)",
+        "format-icons": {
+            "wifi": ["睊", "直" ,""],
+            "ethernet": [""],
+            "disconnected": [""]
+        },
+        "on-click": "kitty nmtui",
+        "tooltip-format": "{ifname}: {ipaddr}",
+    },
+    "pulseaudio": {
+      // "scroll-step": 1, // %, can be a float
+      "format": "{icon} {volume}% {format_source}",
+      "format-bluetooth": "{icon} {volume}% {format_source}",
+      "format-bluetooth-muted": " {format_source}",
+      "format-muted": " {format_source}",
+      "format-source": " {volume}%",
+      "format-source-muted": "",
+      "format-icons": {
+        "headphone": "",
+        "hands-free": "",
+        "headset": "🎧",
+        "phone": "",
+        "portable": "",
+        "car": "",
+        "default": ["", "", ""]
+      },
+      "on-click": "pavucontrol"
+
+    },
+
+    "backlight": {
+        "device": "intel_backlight",
+        "format": "{percent}% {icon}",
+        "format-alt": "{percent}% {icon}",
+        "format-alt-click": "click-right",
+        "format-icons": ["☀️", ""],
+        "on-scroll-down": "brightnessctl -c backlight set 1%-",
+        "on-scroll-up": "brightnessctl -c backlight set +1%"
+    },
+    "custom/weather": {
+        "format": "{}",
+        "format-alt": "{alt}: {}",
+        "format-alt-click": "click-right",
+        "interval": 1800,
+        "return-type": "json",
+        "exec": "~/.config/waybar/modules/weather.sh",
+        "exec-if": "ping wttr.in -c1"
+    },
+
+    "idle_inhibitor": {
+        "format": "{icon} ",
+        "format-icons":{
+            "activated": "",
+            "deactivated": ""
+        }
+    },
+    "custom/mail": {
+        "format": "",
+        "format-alt": "{alt} ",
+        "format-alt-click": "click-right",
+        "interval": 60,
+        "return-type": "json",
+        "exec": "~/.config/waybar/modules/mail.py",
+        "tooltip": false
+    },
+    "tray": {
+        "icon-size": 18
+    },
+
+    "disk": {
+        "format": " {free})" 
+    },
+
+    "custom/recorder": {
+        "format": " Rec...",
+        "format-disabled": " Off-air", //An empty format will hide the module.
+        "return-type": "json",
+        "interval": 1,
+        "exec": "echo '{\"class\": \"recording\"}'",
+        "exec-if": "pgrep wf-recorder",
+    },
+
+    "mpd": {
+      "format": "{stateIcon} {artist} - {title}",
+      "format-disconnected": "#505#",
+      "format-stopped": "⛔",
+      "interval": 10,
+      "consume-icons": {
+        "on": " " // Icon shows only when "consume" is on
+      },
+      "random-icons": {
+        "off": "<span color=\"#f53c3c\"></span> ", // Icon grayed out when "random" is off
+        "on": " "
+      },
+      "repeat-icons": {
+        "on": " "
+      },
+      "single-icons": {
+        "on": "1 "
+      },
+      "state-icons": {
+        "paused": "",
+        "playing": ""
+      },
+      "tooltip-format": "MPD (connected)",
+      "tooltip-format-disconnected": "MPD (disconnected)",
+      "max-length": 45
+    },
+
+    "custom/power": {
+        "format":"⏻",
+        "on-click": "exec ~/.config/waybar/scripts/power-menu.sh",
+        "tooltip": false,
+    },
+}
+
