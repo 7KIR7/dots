@@ -1,185 +1,105 @@
+@import "/home/kir7/.config/waybar/scripts/base16/colors/base16-summerfruit-dark.css";
+
 * {
-  font-family: "JetBrainsMono Nerd Font", Roboto, Helvetica, Arial, sans-serif;
-  padding: 1px 5px;
-  color: white;
-                   
+  transition: none;
+  box-shadow: none;
+  font-family: JetBrainsMono;
 }
 
-window#waybar {
-  font-size: 14px;
-  color: white;
-  font-weight: 600;
-  background: transparent;
-  border-radius: 40px;
-  
-}
-
-window#waybar.hidden {
-  opacity: 0.2;
-}
-
-#battery,
-#clock, 
-#cpu,
-#disk,
-#memory,
-#network,
-#pulseaudio,
-#mpd,
-#custom-launcher,
-#temperature,
-#custom-power {
-  color: black;
-  background-color: #24283b;
-  border-radius: 20px;
-  margin: 1 9px;
-}
-
-label:focus {
-  background-color: #000;
-}
-
-#battery.charging, #battery.plugged {
-  color: #00ffaa;
-}
-
-#battery.warning:not(.charging) {
-  color: white;
-  animation-name: blink;
-  animation-duration: 0.5s;
-  animation-timing-function: linear;
-  animation-iteration-count: infinite;
-  animation-direction: alternate;
-}
-
-#battery.critical {
-  color: #e06c75;
-}
-
-#tags button {
-  background-color: #24283b;
-  color: white;
-  border-radius: 15px;
-  margin: 0 3px;
-}
-
-#tags button.occupied {
-  margin: 0 3px;
-  background-color: #194aac;
-}
-
-#tags button.focused {
-  color: #000;
-  margin: 0 3px;
-  background-color: white;
-}
-
-#tags button.urgent{
-  color: red;
-  margin: 0 3px;
-  background-color:white;
-}
-
-@keyframes blink {
-  to {
-    background-color: #ffffff;
-    color: black;
-  }
-}
-
-.modules-left {
-  margin-left: 10px;
-}
-
-.modules-right {
-  margin-right: 5px;
-}
-/*ANIMATIONS*/
-@keyframes animate {
-	0% {
-		background-position: 0% 50%;
-	}
-	50% {
-		background-position: 100% 50%;
-	}
-	100% {
-		background-position: 0% 50%;
-	}
-}
-
-
-/*BORDER RADIUS*/
-#custom-launcher,
-#cpu,
-#disk,
-#memory{
-  border-radius: 3px 10px 3px 10px;
-}
-
-#clock, 
-#network,
-#pulseaudio,
-#custom-power{
-  border-radius: 10px 3px 10px 3px;
-}
-
-#custom-launcher{
-  color: red;
-  font-size: 11px;
-}
-
-#cpu {
-  background: #12d7f1;
-}
-
-#memory {
-  background: #ff5e78;
-}
-
-#disk {
-  background: #12f194;
-}
-
-#network {
-  background: #12f194;
-}
-
-#pulseaudio {
-  background: #ff5e78;
-}
-
-#battery {
-  background: #808000;
-}
-
-#clock {
-  background: #12d7f1;
-}
-
-#custom-power {
-  color: red;
-  font-size: 17px;
+#waybar {
+  color: @base04;
+  background: @base01;
 }
 
 #workspaces {
-  border-radius: 10px;
-  font-size: 15px;
-  background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
-  background-size: 400% 400%;
-  animation: animate 15s ease infinite;
+  margin: 0 4px;
+}
+
+#workspaces button {
+  margin: 4px 0;
+  padding: 0 6px;
+  color: @base05;
+}
+
+#workspaces button.visible {
+}
+
+#workspaces button.focused {
+  border-radius: 4px;
+  background-color: @base02;
+}
+
+#workspaces button.urgent {
+  color: rgba(238, 46, 36, 1);
+}
+
+#tray {
+  margin: 4px 16px 4px 4px;
+  border-radius: 4px;
+  background-color: @base02;
+}
+
+#tray * {
+  padding: 0 6px;
+  border-left: 1px solid @base00;
+}
+
+#tray *:first-child {
+  border-left: none;
+}
+
+#mode, #battery, #cpu, #disk, #memory, #network, #pulseaudio, #idle_inhibitor, #backlight, #custom-storage, #custom-spotify, #custom-weather, #custom-mail, #clock, #temperature {
+  margin: 4px 2px;
+  padding: 0 6px;
+  background-color: @base02;
+  border-radius: 4px;
+  min-width: 20px;
+
+}
+
+#pulseaudio.muted {
+  color: @base0F;
+}
+
+#pulseaudio.bluetooth {
+  color: @base0C;
+}
+
+#clock {
+  margin-left: 6px;
+  margin-right: 4px;
+  background-color: transparent;
 }
 
 #mpd {
-  color: violet;
-  background: transparent;
-  font-size: 12px;
+  font-size: 13px;
+  border-top: 2px solid #707070;
+  border-radius: 20px;
 }
 
-#tray > .passive {
-    -gtk-icon-effect: dim;
+#custom-power{
+  margin: 4px 2px;
+  padding: 0 6px;
+  background-color: #722F37;
+  border-radius: 4px;
+  min-width: 20px;
 }
 
-#tray > .needs-attention {
-    -gtk-icon-effect: highlight;
-    background-color: #009acb;
+#custom-recorder {
+    font-size: 12px;
+    color:red;
+    margin: 4px 2px;
+    padding: 0 6px;
+}
+
+#custom-launcher{
+  margin: 4px 2px;
+  padding: 0 6px;
+  background-color: #722F37;
+  border-radius: 4px;
+  min-width: 20px;
+}
+
+#temperature.critical {
+  color: @base0F;
 }
