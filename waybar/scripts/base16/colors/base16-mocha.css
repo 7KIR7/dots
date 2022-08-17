@@ -1,0 +1,23 @@
+/*
+*
+* Base16 Mocha
+* Author: Chris Kempson (http://chriskempson.com)
+*
+*/
+
+@define-color base00 #3b3228;
+@define-color base01 #534636;
+@define-color base02 #645240;
+@define-color base03 #7e705a;
+@define-color base04 #b8afad;
+@define-color base05 #d0c8c6;
+@define-color base06 #e9e1dd;
+@define-color base07 #f5eeeb;
+@define-color base08 #cb6077;
+@define-color base09 #d28b71;
+@define-color base0A #f4bc87;
+@define-color base0B #beb55b;
+@define-color base0C #7bbda4;
+@define-color base0D #8ab3b5;
+@define-color base0E #a89bb9;
+@define-color base0F #bb9584;

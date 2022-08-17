@@ -1,14 +1,18 @@
-@import "/home/kir7/.config/waybar/scripts/base16/colors/base16-summerfruit-dark.css";
+@import "/home/kir7/.config/waybar/scripts/base16/colors/base16-pop.css";
 
 * {
   transition: none;
   box-shadow: none;
   font-family: JetBrainsMono;
+  font-size: 13px;
 }
 
 #waybar {
   color: @base04;
   background: @base01;
+  opacity: 0.75;
+  border-radius: 30px;
+  border: 2px solid #54504D;
 }
 
 #workspaces {
@@ -25,7 +29,7 @@
 }
 
 #workspaces button.focused {
-  border-radius: 4px;
+  border-radius: 20px;
   background-color: @base02;
 }
 
@@ -34,8 +38,8 @@
 }
 
 #tray {
-  margin: 4px 16px 4px 4px;
-  border-radius: 4px;
+  margin: 4px 2px;
+  border-radius: 20px;
   background-color: @base02;
 }
 
@@ -52,9 +56,8 @@
   margin: 4px 2px;
   padding: 0 6px;
   background-color: @base02;
-  border-radius: 4px;
-  min-width: 20px;
-
+  border-radius: 20px;
+  min-width: 10px;
 }
 
 #pulseaudio.muted {
@@ -66,38 +69,36 @@
 }
 
 #clock {
-  margin-left: 6px;
-  margin-right: 4px;
+  margin: 4px 2px;
   background-color: transparent;
 }
-
+/*
 #mpd {
-  font-size: 13px;
   border-top: 2px solid #707070;
-  border-radius: 20px;
+  border-radius: 10px;
 }
-
+*/
 #custom-power{
-  margin: 4px 2px;
+  margin: 4px 5px 4px 1px;
   padding: 0 6px;
   background-color: #722F37;
-  border-radius: 4px;
-  min-width: 20px;
+  border-radius: 20px;
+  min-width: 15px;
 }
 
 #custom-recorder {
-    font-size: 12px;
-    color:red;
-    margin: 4px 2px;
-    padding: 0 6px;
-}
-
-#custom-launcher{
+  color:red;
   margin: 4px 2px;
   padding: 0 6px;
   background-color: #722F37;
-  border-radius: 4px;
-  min-width: 20px;
+}
+
+#custom-launcher{
+  margin: 4px 1px 4px 5px;
+  padding: 0 6px;
+  background-color: #722F37;
+  border-radius: 20px;
+  min-width: 15px;
 }
 
 #temperature.critical {

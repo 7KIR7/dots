@@ -1,0 +1,23 @@
+/*
+*
+* Base16 Chalk
+* Author: Chris Kempson (http://chriskempson.com)
+*
+*/
+
+@define-color base00 #151515;
+@define-color base01 #202020;
+@define-color base02 #303030;
+@define-color base03 #505050;
+@define-color base04 #b0b0b0;
+@define-color base05 #d0d0d0;
+@define-color base06 #e0e0e0;
+@define-color base07 #f5f5f5;
+@define-color base08 #fb9fb1;
+@define-color base09 #eda987;
+@define-color base0A #ddb26f;
+@define-color base0B #acc267;
+@define-color base0C #12cfc0;
+@define-color base0D #6fc2ef;
+@define-color base0E #e1a3ee;
+@define-color base0F #deaf8f;

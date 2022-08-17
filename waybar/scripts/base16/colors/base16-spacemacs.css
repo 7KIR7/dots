@@ -1,0 +1,23 @@
+/*
+*
+* Base16 Spacemacs
+* Author: Nasser Alshammari (https://github.com/nashamri/spacemacs-theme)
+*
+*/
+
+@define-color base00 #1f2022;
+@define-color base01 #282828;
+@define-color base02 #444155;
+@define-color base03 #585858;
+@define-color base04 #b8b8b8;
+@define-color base05 #a3a3a3;
+@define-color base06 #e8e8e8;
+@define-color base07 #f8f8f8;
+@define-color base08 #f2241f;
+@define-color base09 #ffa500;
+@define-color base0A #b1951d;
+@define-color base0B #67b11d;
+@define-color base0C #2d9574;
+@define-color base0D #4f97d7;
+@define-color base0E #a31db1;
+@define-color base0F #b03060;

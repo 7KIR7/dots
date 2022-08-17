@@ -1,0 +1,23 @@
+/*
+*
+* Base16 Embers
+* Author: Jannik Siebert (https://github.com/janniks)
+*
+*/
+
+@define-color base00 #16130f;
+@define-color base01 #2c2620;
+@define-color base02 #433b32;
+@define-color base03 #5a5047;
+@define-color base04 #8a8075;
+@define-color base05 #a39a90;
+@define-color base06 #beb6ae;
+@define-color base07 #dbd6d1;
+@define-color base08 #826d57;
+@define-color base09 #828257;
+@define-color base0A #6d8257;
+@define-color base0B #57826d;
+@define-color base0C #576d82;
+@define-color base0D #6d5782;
+@define-color base0E #82576d;
+@define-color base0F #825757;

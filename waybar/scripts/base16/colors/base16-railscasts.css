@@ -1,0 +1,23 @@
+/*
+*
+* Base16 Railscasts
+* Author: Ryan Bates (http://railscasts.com)
+*
+*/
+
+@define-color base00 #2b2b2b;
+@define-color base01 #272935;
+@define-color base02 #3a4055;
+@define-color base03 #5a647e;
+@define-color base04 #d4cfc9;
+@define-color base05 #e6e1dc;
+@define-color base06 #f4f1ed;
+@define-color base07 #f9f7f3;
+@define-color base08 #da4939;
+@define-color base09 #cc7833;
+@define-color base0A #ffc66d;
+@define-color base0B #a5c261;
+@define-color base0C #519f50;
+@define-color base0D #6d9cbe;
+@define-color base0E #b6b3eb;
+@define-color base0F #bc9458;

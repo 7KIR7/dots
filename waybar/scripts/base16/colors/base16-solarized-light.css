@@ -1,0 +1,23 @@
+/*
+*
+* Base16 Solarized Light
+* Author: Ethan Schoonover (modified by aramisgithub)
+*
+*/
+
+@define-color base00 #fdf6e3;
+@define-color base01 #eee8d5;
+@define-color base02 #93a1a1;
+@define-color base03 #839496;
+@define-color base04 #657b83;
+@define-color base05 #586e75;
+@define-color base06 #073642;
+@define-color base07 #002b36;
+@define-color base08 #dc322f;
+@define-color base09 #cb4b16;
+@define-color base0A #b58900;
+@define-color base0B #859900;
+@define-color base0C #2aa198;
+@define-color base0D #268bd2;
+@define-color base0E #6c71c4;
+@define-color base0F #d33682;

@@ -2,6 +2,7 @@
     "layer": "bottom",
     "position": "top",
     "height": 14,
+    "width": 1350,
 
     "modules-left": ["custom/launcher", "sway/workspaces", "sway/mode", "cpu", "memory", "disk", "custom/recorder"],
     "modules-center": ["mpd"], //sway/window
@@ -40,7 +41,7 @@
         "interval": 1,
         "locale": "C", 
         "format": "{:%I:%M %p}",
-        "format-alt": " {:%a, %b %d}" // Icon: calendar-alt
+        "format-alt": " {:%a,%b %d}" // Icon: calendar-alt
     },
     "cpu": {
         "interval": 10,
@@ -50,7 +51,7 @@
     },
     "memory": {
         "interval": 30,
-        "format": "{used:0.2f}GB ",
+        "format": "{used:0.2f}GB ",
         "max-length": 10,
         "tooltip": false,
         "warning": 70,
@@ -69,6 +70,7 @@
         // "format-good": "", // An empty format will hide the module
         // "format-full": "",
         "format-icons": ["", "", "", "", ""]
+        //"format-alt": "{time}",
     },
 
     "temperature": {
@@ -80,7 +82,7 @@
         "format": "{icon}",
         "format-alt": "{ipaddr}/{cidr} {icon}",
         "format-alt-click": "click-right",
-        "format-wifi": "直  ({signalStrength}%)",
+        "format-wifi": "直 ({signalStrength}%)",
         "format-icons": {
             "wifi": ["睊", "直" ,""],
             "ethernet": [""],
@@ -94,7 +96,7 @@
       "format": "{icon} {volume}% {format_source}",
       "format-bluetooth": "{icon} {volume}% {format_source}",
       "format-bluetooth-muted": " {format_source}",
-      "format-muted": " {format_source}",
+      "format-muted": "  {format_source}",
       "format-source": " {volume}%",
       "format-source-muted": "",
       "format-icons": {
@@ -130,7 +132,7 @@
     },
 
     "idle_inhibitor": {
-        "format": "{icon} ",
+        "format": "{icon}",
         "format-icons":{
             "activated": "",
             "deactivated": ""
@@ -146,7 +148,7 @@
         "tooltip": false
     },
     "tray": {
-        "icon-size": 18
+        "icon-size": 15
     },
 
     "disk": {
@@ -154,7 +156,7 @@
     },
 
     "custom/recorder": {
-        "format": " Rec...",
+        "format": " Rec",
         "format-disabled": " Off-air", //An empty format will hide the module.
         "return-type": "json",
         "interval": 1,
@@ -164,8 +166,8 @@
 
     "mpd": {
       "format": "{stateIcon} {artist} - {title}",
-      "format-disconnected": "#505#",
-      "format-stopped": "⛔",
+      "format-disconnected": "🎶",
+      "format-stopped": "♪",
       "interval": 10,
       "consume-icons": {
         "on": " " // Icon shows only when "consume" is on
@@ -181,8 +183,8 @@
         "on": "1 "
       },
       "state-icons": {
-        "paused": "",
-        "playing": ""
+        "paused": "⏸️",
+        "playing": "▶️"
       },
       "tooltip-format": "MPD (connected)",
       "tooltip-format-disconnected": "MPD (disconnected)",

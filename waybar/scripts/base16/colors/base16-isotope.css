@@ -1,0 +1,23 @@
+/*
+*
+* Base16 Isotope
+* Author: Jan T. Sott
+*
+*/
+
+@define-color base00 #000000;
+@define-color base01 #404040;
+@define-color base02 #606060;
+@define-color base03 #808080;
+@define-color base04 #c0c0c0;
+@define-color base05 #d0d0d0;
+@define-color base06 #e0e0e0;
+@define-color base07 #ffffff;
+@define-color base08 #ff0000;
+@define-color base09 #ff9900;
+@define-color base0A #ff0099;
+@define-color base0B #33ff00;
+@define-color base0C #00ffff;
+@define-color base0D #0066ff;
+@define-color base0E #cc00ff;
+@define-color base0F #3300ff;

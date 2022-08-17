@@ -1,0 +1,23 @@
+/*
+*
+* Base16 Brewer
+* Author: Timothée Poisot (http://github.com/tpoisot)
+*
+*/
+
+@define-color base00 #0c0d0e;
+@define-color base01 #2e2f30;
+@define-color base02 #515253;
+@define-color base03 #737475;
+@define-color base04 #959697;
+@define-color base05 #b7b8b9;
+@define-color base06 #dadbdc;
+@define-color base07 #fcfdfe;
+@define-color base08 #e31a1c;
+@define-color base09 #e6550d;
+@define-color base0A #dca060;
+@define-color base0B #31a354;
+@define-color base0C #80b1d3;
+@define-color base0D #3182bd;
+@define-color base0E #756bb1;
+@define-color base0F #b15928;
