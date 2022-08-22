@@ -2,7 +2,7 @@ ignore-empty-password
 # indicator
 # no-unlock-indicator
 # daemonize
-
+   
 clock
 #timestr=%R
 datestr=%a, %e of %B
