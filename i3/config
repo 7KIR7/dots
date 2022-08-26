@@ -16,7 +16,7 @@ bindsym $mod+i exec notify-send "$(curl wttr.in/pokhara?format=3)"
 #poweroff, reboot shortcuts
 bindsym $mod+Shift+End exec poweroff
 bindsym $mod+Shift+Home exec reboot
-
+ 
 # set default desktop layout (default is tiling)
 # workspace_layout tabbed <stacking|tabbed>
 
