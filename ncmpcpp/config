@@ -16,8 +16,6 @@ main_window_color = "white"
 header_window_color = "cyan"
 volume_color = "green"
 statusbar_color = "white"
-progressbar_color = "cyan"
-progressbar_elapsed_color = "white"
 
 ## Song List ##
 song_columns_list_format = "(10)[blue]{l} (30)[green]{t} (30)[magenta]{a} (30)[yellow]{b}"
@@ -39,10 +37,15 @@ song_status_format = " $6%a $7⟫⟫ $3%t $7⟫⟫ $4%b "
 ## Visualizer ##
 visualizer_fifo_path = "/tmp/mpd.fifo"
 visualizer_output_name = "my_fifo"
-visualizer_sync_interval = "60"
+visualizer_sync_interval = "1"
 visualizer_type = "spectrum"
 visualizer_in_stereo = "yes"
-visualizer_look = "◆▋"
+#visualizer_look = "◆▋"
+visualizer_look ="┃┃"
+#visualizer_look ="●┃"
+#visualizer_look = "█┇"
+#visualizer_look = "▒░"
+visualizer_color = 7,5,8,3
 
 ## Navigation ##
 cyclic_scrolling = "yes"
@@ -68,7 +71,11 @@ statusbar_visibility = "yes"
 titles_visibility = "yes"
 
 ## Progress Bar ##
-progressbar_look =  "=>-"
+#progressbar_look = "─>"
+#progressbar_look = "___"
+progressbar_look = "⠒⠒⠐"
+progressbar_color = "white"
+progressbar_elapsed_color = "yellow"
 
 ## Now Playing ##
 now_playing_prefix = "> "

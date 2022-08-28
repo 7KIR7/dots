@@ -22,12 +22,18 @@ set $mod Mod4
 #exec swaybg -i ~/Pictures/wallpapers/wp1.jpg
 exec_always --no-startup-id ~/.azotebg
 
+#Set Path:
+set $lock_path ~/.config/sway/lock.sh
+set $idle_path ~/.config/sway/idle.sh
+
 #start always
 #exec_always --no-startup-id bash ~/.config/polybar/launch.sh --forest
 #exec_always --no-startup-id picom --experimental-backend
 exec_always --no-startup-id dunst
 #audio gain easyeffects
 exec_always --no-startup-id easyeffects --gapplication-service
+exec_always --no-startup-id autotiling
+exec_always ~/.config/sway/idle.sh
 
 #dunst
 bindsym $mod+o exec notify-send -t 3500 "$(date '+%a %b %e %r')"
@@ -52,7 +58,7 @@ hide_edge_borders none
 bindsym $mod+u border none
 bindsym $mod+y border pixel 1
 bindsym $mod+n border normal
-client.focused "#9f1209" "#3385F5" "#ffffff" "#9f1209"
+client.focused "#3457D5" "#3385F5" "#ffffff" "#3385F5"
 # Font for window titles. Will also be used by the bar unless a different font
 # is used in the bar {} block below.
 font xft:URWGothic-Book 11
@@ -300,7 +306,7 @@ mode "resize" {
 }
 
 # Lock screen
-bindsym $mod+9 exec swaylock
+bindsym $mod+9 exec $lock_path
 
 # Autostart applications
 exec --no-startup-id /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
@@ -427,11 +433,11 @@ mode "$mode_gaps_outer" {
     bindsym XF86MonBrightnessDown exec brightnessctl -c backlight set 5%-
 
 ### Idle configuration
-exec swayidle -w \
-  	timeout 250 'swaylock -f -c 000000' \
-  	timeout 400 'swaymsg "output * dpms off"' \
-    resume 'swaymsg "output * dpms on"' \
-  	before-sleep 'swaylock -f -c 000000'
+#exec swayidle -w \
+#  	timeout 250 'swaylock -f -c 000000' \
+#  	timeout 400 'swaymsg "output * dpms off"' \
+#    resume 'swaymsg "output * dpms on"' \
+#  	before-sleep 'swaylock -f -c 000000'
 
 ### Input configuration
 # You can get the names of your inputs by running: swaymsg -t get_inputs
@@ -448,5 +454,3 @@ bindsym Shift+Print exec IMG=~/Pictures/screenshot_$(date +%Y%m%d_%H%M%S).png &&
 set $screenrecord wf-recorder -g "$(slurp)" --audio=alsa_output.pci-0000_08_00.6.analog-stereo.monitor -f ~/Videos/wf-recorder/mov-$(date +"%Y-%m-%d--%H-%M-%S.mp4")
 bindsym Shift+Control+Print exec $screenrecord && echo "" || echo " "
 bindsym Shift+Control+BackSpace exec killall -s SIGINT wf-recorder && notify-send "Recording Complete"
-
-
