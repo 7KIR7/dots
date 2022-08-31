@@ -5,15 +5,9 @@
 #
 # Read `man 5 sway` for a complete reference.
 
-# user config directory
-#include $HOME/.config/sway/config.d/*
-
-# only enable this if every app you use is compatible with wayland
-# xwayland disable
-
 #*****************************************************************
 
-assign [class="VirtualBox Machine"] workspace 6
+
 
 # Set mod key (Mod1=<Alt>, Mod4=<Super>)
 set $mod Mod4
@@ -23,8 +17,11 @@ set $mod Mod4
 exec_always --no-startup-id ~/.azotebg
 
 #Set Path:
-set $lock_path ~/.config/sway/lock.sh
-set $idle_path ~/.config/sway/idle.sh
+set $lock_path ~/.config/sway/scripts/lock.sh
+set $idle_path ~/.config/sway/scripts/idle.sh
+
+#Assign workspace
+assign [class="VirtualBox Machine"] workspace 6
 
 #start always
 #exec_always --no-startup-id bash ~/.config/polybar/launch.sh --forest
@@ -56,7 +53,7 @@ hide_edge_borders none
 
 # change borders
 bindsym $mod+u border none
-bindsym $mod+y border pixel 1
+bindsym $mod+y border pixel 2
 bindsym $mod+n border normal
 client.focused "#3457D5" "#3385F5" "#ffffff" "#3385F5"
 # Font for window titles. Will also be used by the bar unless a different font
@@ -448,9 +445,11 @@ input type:touchpad {
 #    dwt disabled
 }
 
+#Screenshot
 bindsym Print exec IMG=~/Pictures/screenshot_$(date +%Y%m%d_%H%M%S).png && grim $IMG && wl-copy < $IMG && notify-send "Screenshot saved"
 bindsym Shift+Print exec IMG=~/Pictures/screenshot_$(date +%Y%m%d_%H%M%S).png && grim -g "$(slurp)" $IMG && wl-copy < $IMG && notify-send "Screenshot saved"
 
+#Screenrecord
 set $screenrecord wf-recorder -g "$(slurp)" --audio=alsa_output.pci-0000_08_00.6.analog-stereo.monitor -f ~/Videos/wf-recorder/mov-$(date +"%Y-%m-%d--%H-%M-%S.mp4")
 bindsym Shift+Control+Print exec $screenrecord && echo "" || echo " "
 bindsym Shift+Control+BackSpace exec killall -s SIGINT wf-recorder && notify-send "Recording Complete"
