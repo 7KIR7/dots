@@ -30,7 +30,7 @@ exec_always --no-startup-id dunst
 #audio gain easyeffects
 exec_always --no-startup-id easyeffects --gapplication-service
 exec_always --no-startup-id autotiling
-exec_always ~/.config/sway/idle.sh
+exec_always ~/.config/sway/scripts/idle.sh
 
 #dunst
 bindsym $mod+o exec notify-send -t 3500 "$(date '+%a %b %e %r')"
