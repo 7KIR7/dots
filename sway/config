@@ -28,7 +28,7 @@ exec_always --no-startup-id dunst
 exec_always --no-startup-id easyeffects --gapplication-service
 exec_always --no-startup-id autotiling
 exec_always ~/.config/sway/scripts/idle.sh
-
+ 
 #dunst
 bindsym $mod+o exec notify-send -t 3500 "$(date '+%a %b %e %r')"
 bindsym $mod+i exec notify-send "$(curl wttr.in/pokhara?format=3)"
