@@ -12,7 +12,7 @@ set $mod Mod4
 # Set wallpaper:
 #exec swaybg -i ~/Pictures/wallpapers/wp1.jpg
 exec_always --no-startup-id ~/.azotebg
-
+ 
 #Set Path:
 set $lock_path ~/.config/sway/scripts/lock.sh
 set $idle_path ~/.config/sway/scripts/idle.sh
