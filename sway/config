@@ -8,7 +8,7 @@
 #*****************************************************************
 # Set mod key (Mod1=<Alt>, Mod4=<Super>)
 set $mod Mod4
-  
+
 # Set wallpaper:
 #exec swaybg -i ~/Pictures/wallpapers/wp1.jpg
 exec_always --no-startup-id ~/.azotebg
