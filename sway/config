@@ -4,7 +4,7 @@
 # Config for sway
 #
 # Read `man 5 sway` for a complete reference.
-  
+
 #*****************************************************************
 # Set mod key (Mod1=<Alt>, Mod4=<Super>)
 set $mod Mod4
