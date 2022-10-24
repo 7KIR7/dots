@@ -1,18 +1,21 @@
 # Initial Setup 
 # exec ~/set_once.sh
- 
+
 # Config for sway
-# 
+#
 # Read `man 5 sway` for a complete reference.
- 
+
 #*****************************************************************
+
+
+
 # Set mod key (Mod1=<Alt>, Mod4=<Super>)
 set $mod Mod4
 
 # Set wallpaper:
 #exec swaybg -i ~/Pictures/wallpapers/wp1.jpg
 exec_always --no-startup-id ~/.azotebg
- 
+
 #Set Path:
 set $lock_path ~/.config/sway/scripts/lock.sh
 set $idle_path ~/.config/sway/scripts/idle.sh
@@ -27,8 +30,9 @@ exec_always --no-startup-id dunst
 #audio gain easyeffects
 exec_always --no-startup-id easyeffects --gapplication-service
 exec_always --no-startup-id autotiling
-exec_always ~/.config/sway/scripts/idle.sh
- 
+exec_always --no-startup-id ~/.config/sway/scripts/idle.sh
+exec_always --no-startup-id ~/.config/sway/scripts/battery-low-notify.sh
+
 #dunst
 bindsym $mod+o exec notify-send -t 3500 "$(date '+%a %b %e %r')"
 bindsym $mod+i exec notify-send "$(curl wttr.in/pokhara?format=3)"
@@ -87,14 +91,14 @@ bindsym $mod+Ctrl+m exec terminal -e 'alsamixer'
 ################################################################################################
 
 # Screen brightness controls
-# bindsym XF86MonBrightnessUp exec "xbacklight -inc 5; notify-send 'brightness up'"
-# bindsym XF86MonBrightnessDown exec "xbacklight -dec 5; notify-send 'brightness down'"
+# bindsym XF86MonBrightnessUp exec "xbacklight -inc 5"; notify-send 'brightness up'
+# bindsym XF86MonBrightnessDown exec "xbacklight -dec 5"; notify-send 'brightness down'
 
 # Start Applications
 bindsym $mod+F3 exec thunar
 # bindsym $mod+F3 exec ranger
 bindsym $mod+F5 exec terminal -e 'mocp'
-bindsym $mod+Shift+d --release exec "killall dunst; exec notify-send 'restart dunst'"
+bindsym $mod+Shift+d --release exec "killall dunst; exec notify-send 'restart dunst'
 #bindsym Print exec --no-startup-id i3-scrot
 #bindsym $mod+Print --release exec --no-startup-id i3-scrot -w
 #bindsym $mod+Shift+Print --release exec --no-startup-id i3-scrot -s
@@ -133,17 +137,17 @@ bindsym $mod+Tab workspace back_and_forth
 bindsym $mod+Shift+b move container to workspace back_and_forth; workspace back_and_forth
 
 # split orientation
-bindsym $mod+h split h;exec notify-send 'tile horizontally'
-bindsym $mod+v split v;exec notify-send 'tile vertically'
+#bindsym $mod+h split h;exec notify-send 'tile horizontally'
+#bindsym $mod+v split v;exec notify-send 'tile vertically'
 #bindsym $mod+q split toggle
 
 # toggle fullscreen mode for the focused container
 bindsym $mod+f fullscreen toggle
 
 # change container layout (stacked, tabbed, toggle split)
-bindsym $mod+s layout stacking
-bindsym $mod+w layout tabbed
-bindsym $mod+e layout toggle split
+#bindsym $mod+s layout stacking
+#bindsym $mod+w layout tabbed
+#bindsym $mod+e layout toggle split
 
 # toggle tiling / floating
 bindsym $mod+Shift+space floating toggle
@@ -155,7 +159,7 @@ bindsym $mod+space focus mode_toggle
 bindsym $mod+Shift+s sticky toggle
 
 # focus the parent container
-bindsym $mod+a focus parent
+#bindsym $mod+a focus parent
 
 # move the currently focused window to the scratchpad
 bindsym $mod+Shift+minus move scratchpad
@@ -443,10 +447,19 @@ input type:touchpad {
 }
 
 #Screenshot
-bindsym Print exec IMG=~/Pictures/screenshot_$(date +%Y%m%d_%H%M%S).png && grim $IMG && wl-copy < $IMG && notify-send "Screenshot saved"
-bindsym Shift+Print exec IMG=~/Pictures/screenshot_$(date +%Y%m%d_%H%M%S).png && grim -g "$(slurp)" $IMG && wl-copy < $IMG && notify-send "Screenshot saved"
+##capture selected area to clipboard 
+bindsym $mod+s exec grim -g "$(slurp)" - | wl-copy && notify-send "Screenshot copied"
+##capture all screen to clipboard and saves
+bindsym $mod+Print exec IMG=~/Pictures/screenshot_$(date +%Y%m%d_%H%M%S).png && grim $IMG && wl-copy < $IMG && notify-send "Screenshot saved"
+##capture selected area and saves
+bindsym $mod+Shift+Print exec IMG=~/Pictures/screenshot_$(date +%Y%m%d_%H%M%S).png && grim -g "$(slurp)" $IMG && wl-copy < $IMG && notify-send "Screenshot saved"
+bindsym Control+Shift+Print exec IMG=~/Pictures/nwa/screenshot_$(date +%Y%m%d_%H%M%S).png && grim -g "$(slurp)" $IMG && wl-copy < $IMG && notify-send "Screenshot saved"
 
 #Screenrecord
 set $screenrecord wf-recorder -g "$(slurp)" --audio=alsa_output.pci-0000_08_00.6.analog-stereo.monitor -f ~/Videos/wf-recorder/mov-$(date +"%Y-%m-%d--%H-%M-%S.mp4")
-bindsym Shift+Control+Print exec $screenrecord && echo "" || echo " "
-bindsym Shift+Control+BackSpace exec killall -s SIGINT wf-recorder && notify-send "Recording Complete"
+bindsym $mod+v exec $screenrecord && echo "" || echo " "
+bindsym Shift+Control+BackSpace exec killall -s SIGINT wf-recorder; exec killall ffmpeg && notify-send "Recording Saved"
+
+#Audiorecord
+set $audiorecord ffmpeg -f pulse -i alsa_output.pci-0000_00_1b.0.analog-stereo.monitor ~/Audio/aud-$(date +%Y%m%d_%H%M%S).mp3
+bindsym $mod+a exec $audiorecord && echo "♬" || echo " "
