@@ -1,0 +1,23 @@
+/*
+*
+* Base16 Gruvbox dark, pale
+* Author: Dawid Kurek (dawikur@gmail.com), morhetz (https://github.com/morhetz/gruvbox)
+*
+*/
+
+@define-color base00 #262626;
+@define-color base01 #3a3a3a;
+@define-color base02 #4e4e4e;
+@define-color base03 #8a8a8a;
+@define-color base04 #949494;
+@define-color base05 #dab997;
+@define-color base06 #d5c4a1;
+@define-color base07 #ebdbb2;
+@define-color base08 #d75f5f;
+@define-color base09 #ff8700;
+@define-color base0A #ffaf00;
+@define-color base0B #afaf00;
+@define-color base0C #85ad85;
+@define-color base0D #83adad;
+@define-color base0E #d485ad;
+@define-color base0F #d65d0e;

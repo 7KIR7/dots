@@ -1,0 +1,23 @@
+/*
+*
+* Base16 Pop
+* Author: Chris Kempson (http://chriskempson.com)
+*
+*/
+
+@define-color base00 #000000;
+@define-color base01 #202020;
+@define-color base02 #303030;
+@define-color base03 #505050;
+@define-color base04 #b0b0b0;
+@define-color base05 #d0d0d0;
+@define-color base06 #e0e0e0;
+@define-color base07 #ffffff;
+@define-color base08 #eb008a;
+@define-color base09 #f29333;
+@define-color base0A #f8ca12;
+@define-color base0B #37b349;
+@define-color base0C #00aabb;
+@define-color base0D #0e5a94;
+@define-color base0E #b31e8d;
+@define-color base0F #7a2d00;

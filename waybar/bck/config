@@ -3,8 +3,8 @@
     "position": "top",
     "height": 14,
     "width": 1350,
-    "margin": "7, 0, 2, 0",
-    "modules-left": ["custom/launcher", "sway/workspaces", "sway/mode", "cpu", "memory", "disk", "custom/recorder", "custom/audiorec"],
+
+    "modules-left": ["custom/launcher", "sway/workspaces", "sway/mode", "cpu", "memory", "disk", "custom/recorder"],
     "modules-center": ["mpd"], //sway/window
     "modules-right": ["tray", "backlight", "idle_inhibitor", "pulseaudio", "network", "battery", "clock", "custom/power"],
     "sway/mode": {
@@ -17,10 +17,10 @@
             "2": "♥",
             "3": "♦",
             "4": "♣",
-            "5": "₿",
-            "6": "⟠",
-            "7": "₮",
-            "8": "Ð",
+            "5": "☣",
+            "6": "☢",
+            "7": "⌘",
+            "8": "⌬",
             "urgent": "",
             "focused": "",
             "default": ""
@@ -163,15 +163,6 @@
         "interval": 1,
         "exec": "echo '{\"class\": \"recording\"}'",
         "exec-if": "pgrep wf-recorder",
-    },
-
-    "custom/audiorec": {
-        "format": "♬ Rec",
-        "format-disabled": "♬ Off-air", //An empty format will hide the module.
-        "return-type": "json",
-        "interval": 1,
-        "exec": "echo '{\"class\": \"audio recording\"}'",
-        "exec-if": "pgrep ffmpeg",
     },
 
     "mpd": {

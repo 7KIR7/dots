@@ -4,20 +4,19 @@
   transition: none;
   box-shadow: none;
   font-family: JetBrainsMono;
-  font-size: 12.5px;
-  color: #89CFF0;
+  font-size: 13px;
 }
 
 #waybar {
-  opacity: 1;
+  opacity:0.9;
   margin-top: 14px;
-  background-color: transparent;
+  background-color: @base01;
   border-radius: 12px;
-  border: 2px solid #89CFF0;
+  border: 2px solid #54504D;
 }
 
 #workspaces {
-  margin: 0 3px;
+  margin: 0 4px;
 }
 
 #workspaces button {
@@ -57,8 +56,7 @@
 #mode, #battery, #cpu, #disk, #memory, #network, #pulseaudio, #idle_inhibitor, #backlight, #custom-storage, #custom-spotify, #custom-weather, #custom-mail, #clock, #temperature {
   margin: 4px 2px;
   padding: 0 6px;
-  background-color: transparent;
-/*  background-color: @base02; */
+  background-color: @base02;
   border-radius: 20px;
   min-width: 10px;
   opacity:1;
@@ -83,8 +81,6 @@
 /*  background-color: @base02;  */
   border-radius: 20px;
   min-width: 10px;
-  font-size: 11.5px;
-  font-family: Sora;
 }
 
 #custom-power{
@@ -96,13 +92,6 @@
 }
 
 #custom-recorder {
-  color:red;
-  margin: 4px 2px;
-  padding: 0 6px;
-  background-color: #722F37;
-}
-
-#custom-audiorec {
   color:red;
   margin: 4px 2px;
   padding: 0 6px;

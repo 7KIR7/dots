@@ -13,8 +13,9 @@ alias ll='ls -lav --ignore=..'   # show long listing of all except ".."
 alias l='ls -lav --ignore=.?*'   # show long listing but no hidden dotfiles except "."
 alias topdf='libreoffice --convert-to pdf *.doc' #convert to pdf
 alias mergepdf='pdfunite *.pdf out.pdf' #merge pdfs
-alias dotscopy='cd ~/.config/; cp -r {dunst,fish,kitty,mpd,ncmpcpp,neofetch,sway,swaylock,waybar,wofi} ~/Desktop/dots/; cd; cp -r .bashrc ~/Desktop/dots'
+alias dotscopy='cd ~/.config/; cp -r {sway,swaylock,waybar,wofi} ~/Desktop/dots/; cd; cp -r .bashrc ~/Desktop/dots'
 alias nhnb='nohup netbeans &'
+alias tsm='transmission-remote'
 
 [[ -z "$FUNCNEST" ]] && export FUNCNEST=100          # limits recursive functions, see 'man bash'
 
@@ -26,3 +27,5 @@ export _JAVA_OPTIONS="-Dawt.useSystemAAFontSettings=on"
 ## (you can write some initial letters of the command first).
 bind '"\e[A":history-search-backward'
 bind '"\e[B":history-search-forward'
+
+fish

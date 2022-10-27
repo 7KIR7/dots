@@ -1,0 +1,23 @@
+/*
+*
+* Base16 Ashes
+* Author: Jannik Siebert (https://github.com/janniks)
+*
+*/
+
+@define-color base00 #1c2023;
+@define-color base01 #393f45;
+@define-color base02 #565e65;
+@define-color base03 #747c84;
+@define-color base04 #adb3ba;
+@define-color base05 #c7ccd1;
+@define-color base06 #dfe2e5;
+@define-color base07 #f3f4f5;
+@define-color base08 #c7ae95;
+@define-color base09 #c7c795;
+@define-color base0A #aec795;
+@define-color base0B #95c7ae;
+@define-color base0C #95aec7;
+@define-color base0D #ae95c7;
+@define-color base0E #c795ae;
+@define-color base0F #c79595;

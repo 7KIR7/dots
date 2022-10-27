@@ -1,0 +1,23 @@
+/*
+*
+* Base16 Harmonic16 Light
+* Author: Jannik Siebert (https://github.com/janniks)
+*
+*/
+
+@define-color base00 #f7f9fb;
+@define-color base01 #e5ebf1;
+@define-color base02 #cbd6e2;
+@define-color base03 #aabcce;
+@define-color base04 #627e99;
+@define-color base05 #405c79;
+@define-color base06 #223b54;
+@define-color base07 #0b1c2c;
+@define-color base08 #bf8b56;
+@define-color base09 #bfbf56;
+@define-color base0A #8bbf56;
+@define-color base0B #56bf8b;
+@define-color base0C #568bbf;
+@define-color base0D #8b56bf;
+@define-color base0E #bf568b;
+@define-color base0F #bf5656;

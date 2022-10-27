@@ -1,0 +1,23 @@
+/*
+*
+* Base16 Gruvbox light, medium
+* Author: Dawid Kurek (dawikur@gmail.com), morhetz (https://github.com/morhetz/gruvbox)
+*
+*/
+
+@define-color base00 #fbf1c7;
+@define-color base01 #ebdbb2;
+@define-color base02 #d5c4a1;
+@define-color base03 #bdae93;
+@define-color base04 #665c54;
+@define-color base05 #504945;
+@define-color base06 #3c3836;
+@define-color base07 #282828;
+@define-color base08 #9d0006;
+@define-color base09 #af3a03;
+@define-color base0A #b57614;
+@define-color base0B #79740e;
+@define-color base0C #427b58;
+@define-color base0D #076678;
+@define-color base0E #8f3f71;
+@define-color base0F #d65d0e;
