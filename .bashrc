@@ -26,4 +26,4 @@ export _JAVA_OPTIONS="-Dawt.useSystemAAFontSettings=on"
 ## Use the up and down arrow keys for finding a command in history
 ## (you can write some initial letters of the command first).
 bind '"\e[A":history-search-backward'
-bind '"\e[B":history-search-forward'
+bind '"\e[B":history-search-forward' 
