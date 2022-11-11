@@ -13,8 +13,9 @@ alias ll='ls -lav --ignore=..'   # show long listing of all except ".."
 alias l='ls -lav --ignore=.?*'   # show long listing but no hidden dotfiles except "."
 alias topdf='libreoffice --convert-to pdf *.doc' #convert to pdf
 alias mergepdf='pdfunite *.pdf out.pdf' #merge pdfs
-alias dotscopy='cd ~/.config/; cp -r {sway,swaylock,waybar,wofi,fish} ~/Desktop/dots/; cd; cp -r {.bashrc,.aliases} ~/Desktop/dots'
+alias dotscopy='cd ~/.config/; cp -r {sway,swaylock,waybar,wofi} ~/Desktop/dots/; cd; cp -r .bashrc ~/Desktop/dots'
 alias nhnb='nohup netbeans &'
+alias rs='nohup rstudio-bin &'
 alias tsm='transmission-remote'
 
 [[ -z "$FUNCNEST" ]] && export FUNCNEST=100          # limits recursive functions, see 'man bash'
@@ -22,8 +23,12 @@ alias tsm='transmission-remote'
 export JDTLS_HOME="$HOME/.local/share/eclipse/jdtls"
 export _JAVA_AWT_WM_NONREPARENTING=1
 export _JAVA_OPTIONS="-Dawt.useSystemAAFontSettings=on"
+export QT_QPA_PLATFORM=xcb
 
 ## Use the up and down arrow keys for finding a command in history
 ## (you can write some initial letters of the command first).
 bind '"\e[A":history-search-backward'
-bind '"\e[B":history-search-forward' 
+bind '"\e[B":history-search-forward'
+
+fish
+. ~/z.sh

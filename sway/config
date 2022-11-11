@@ -2,10 +2,11 @@
 # exec ~/set_once.sh
 
 # Config for sway
-# 
+#
 # Read `man 5 sway` for a complete reference.
 
 #*****************************************************************
+
 
 
 # Set mod key (Mod1=<Alt>, Mod4=<Super>)
@@ -443,6 +444,12 @@ input type:touchpad {
     tap enabled
     scroll_method two_finger edge
 #    dwt disabled
+}
+
+input * {
+    xkb_layout "us,us"
+    xkb_variant ",colemak_dh"
+    xkb_options "caps:shift_modifier,grp:ctrl_space_toggle"
 }
 
 #Screenshot

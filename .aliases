@@ -7,3 +7,5 @@ alias dotscopy='cd ~/.config/; cp -r {sway,swaylock,waybar,wofi,fish} ~/Desktop/
 alias nhnb='nohup netbeans &'
 alias tsm='transmission-remote'
 alias nhid='nohup idea &'
+alias rs='nohup rstudio-bin &'
+alias lvim='/home/kir7/.local/bin/lvim'
