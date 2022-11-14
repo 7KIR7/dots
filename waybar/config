@@ -48,14 +48,14 @@
 
     "cpu": {
         "interval": 10,
-        "format": "{usage}% ",
+        "format": " {usage}%",
         "max-length": 10,
         "on-click": "kitty -e 'htop'"
     },
 
     "memory": {
         "interval": 30,
-        "format": "{used:0.2f}GB ",
+        "format": " {used:0.2f}GB",
 
         "max-length": 10,
         "tooltip": false,
@@ -69,9 +69,9 @@
             "warning": 30,
             "critical": 15
         },
-        "format": "{capacity}% {icon}",
-        "format-charging": "{capacity}% ⚡",
-        "format-plugged": "{capacity}% ",
+        "format": "{icon} {capacity}%",
+        "format-charging": "⚡ {capacity}%",
+        "format-plugged": "  {capacity}%",
         // "format-good": "", // An empty format will hide the module
         // "format-full": "",
         "format-icons": ["", "", "", "", ""]
@@ -120,9 +120,7 @@
 
     "backlight": {
         "device": "intel_backlight",
-        "format": "{percent}% {icon}",
-        "format-alt": "{percent}% {icon}",
-        "format-alt-click": "click-right",
+        "format": "{icon} {percent}%",
         "format-icons": ["☀️", ""],
         "on-scroll-down": "brightnessctl -c backlight set 1%-",
         "on-scroll-up": "brightnessctl -c backlight set +1%"
