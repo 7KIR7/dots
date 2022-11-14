@@ -67,10 +67,9 @@
 }
 
 #mpd *{
-  border-radius: 20px;
   min-width: 10px;
-  font-size: 12px;
-  font-family: Sora;
+  font-size: 11px;
+  font-family: JetBrainsMono;
 }
 
 #custom-power{
