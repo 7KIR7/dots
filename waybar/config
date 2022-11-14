@@ -3,13 +3,14 @@
     "position": "top",
     "height": 14,
     "width": 1350,
-    "margin": "7, 0, 2, 0",
+    "margin": "5, 0, 2, 0",
     "modules-left": ["custom/launcher", "sway/workspaces", "sway/mode", "cpu", "memory", "disk", "custom/recorder", "custom/audiorec"],
     "modules-center": ["mpd"], //sway/window
     "modules-right": ["tray", "backlight", "idle_inhibitor", "pulseaudio", "network", "battery", "clock", "custom/power"],
     "sway/mode": {
         "format": " {}"
     },
+
     "sway/workspaces": {
         "format": "{icon}",
         "format-icons": {
@@ -37,18 +38,21 @@
         "max-length": 25,
         "tooltip": false
     },
+
     "clock": {
         "interval": 1,
         "locale": "C", 
         "format": "{:%I:%M %p}",
         "format-alt": " {:%a,%b %d}" // Icon: calendar-alt
     },
+
     "cpu": {
         "interval": 10,
         "format": "{usage}% ",
         "max-length": 10,
         "on-click": "kitty -e 'htop'"
     },
+
     "memory": {
         "interval": 30,
         "format": "{used:0.2f}GB ",
@@ -79,6 +83,7 @@
 	"format-critical": "{temperatureC}° ",
 	"format": "{temperatureC}° "
     },
+
     "network": {
         "format": "{icon}",
         "format-alt": "{ipaddr}/{cidr} {icon}",
@@ -92,6 +97,7 @@
         "on-click": "kitty nmtui",
         "tooltip-format": "{ifname}: {ipaddr}",
     },
+
     "pulseaudio": {
       // "scroll-step": 1, // %, can be a float
       "format": "{icon} {volume}% {format_source}",
@@ -110,7 +116,6 @@
         "default": ["", "", ""]
       },
       "on-click": "pavucontrol"
-
     },
 
     "backlight": {
@@ -122,15 +127,6 @@
         "on-scroll-down": "brightnessctl -c backlight set 1%-",
         "on-scroll-up": "brightnessctl -c backlight set +1%"
     },
-    "custom/weather": {
-        "format": "{}",
-        "format-alt": "{alt}: {}",
-        "format-alt-click": "click-right",
-        "interval": 1800,
-        "return-type": "json",
-        "exec": "~/.config/waybar/modules/weather.sh",
-        "exec-if": "ping wttr.in -c1"
-    },
 
     "idle_inhibitor": {
         "format": "{icon}",
@@ -139,15 +135,7 @@
             "deactivated": ""
         }
     },
-    "custom/mail": {
-        "format": "",
-        "format-alt": "{alt} ",
-        "format-alt-click": "click-right",
-        "interval": 60,
-        "return-type": "json",
-        "exec": "~/.config/waybar/modules/mail.py",
-        "tooltip": false
-    },
+
     "tray": {
         "icon-size": 15
     },
@@ -206,7 +194,4 @@
         "on-click": "exec ~/.config/waybar/scripts/power-menu.sh",
         "tooltip": false,
     },
-
 }
-
-

@@ -1,5 +1,3 @@
-@import "base16-pop.css";
-
 * {
   transition: none;
   box-shadow: none;
@@ -9,80 +7,69 @@
 }
 
 #waybar {
-  opacity: 1;
   margin-top: 14px;
-  background-color: transparent;
+  background: rgba(52,45,113,0.3);
   border-radius: 12px;
   border: 2px solid #89CFF0;
 }
 
 #workspaces {
   margin: 0 3px;
+  color: transparent;
 }
 
 #workspaces button {
-  margin: 4px 0;
-  padding: 0 6px;
-  color: @base05;
-
+  margin: 3px 0;
+  padding: 0 4px;
 }
 
 #workspaces button.visible {
 }
 
 #workspaces button.focused {
-  border-radius: 20px;
-  background-color: @base02;
+  border-radius: 10px;
+  background-color: rgba(0,0,0,0.4);
 }
 
 #workspaces button.urgent {
-  color: rgba(238, 46, 36, 1);
+  border-radius: 10px;
+}
+
+#workspaces button.urgent * {
+  color: rgba(246,71,71,0.8);
 }
 
 #tray {
-  margin: 4px 2px;
-  border-radius: 20px;
-  background-color: @base02;
+  margin: 3px 2px;
+  border-radius: 12px;
+  background-color: rgba(0,0,0,0.4);
 }
 
 #tray * {
   padding: 0 6px;
-  border-left: 1px solid @base00;
+  border-left: 1px solid black;
 }
 
 #tray *:first-child {
   border-left: none;
 }
 
-#mode, #battery, #cpu, #disk, #memory, #network, #pulseaudio, #idle_inhibitor, #backlight, #custom-storage, #custom-spotify, #custom-weather, #custom-mail, #clock, #temperature {
+#mode, #battery, #cpu, #disk, #memory, #network, #pulseaudio, #idle_inhibitor, #backlight, #mpd, #clock, #temperature {
   margin: 4px 2px;
   padding: 0 6px;
-  background-color: transparent;
-/*  background-color: @base02; */
   border-radius: 20px;
   min-width: 10px;
-  opacity:1;
-}
-
-#pulseaudio.muted {
-  color: @base0F;
-}
-
-#pulseaudio.bluetooth {
-  color: @base0C;
+  background-color: transparent;
 }
 
 #clock {
   margin: 4px 2px;
-  background-color: transparent;
 }
 
-#mpd {
-  margin: 4px 2px;
-  padding: 0 6px;
+#mpd *{
   border-radius: 20px;
   min-width: 10px;
-  font-size: 11.5px;
+  font-size: 12px;
   font-family: Sora;
 }
 
@@ -94,18 +81,10 @@
   min-width: 15px;
 }
 
-#custom-recorder {
-  color:red;
+#custom-recorder, #custom-audiorec {
   margin: 4px 2px;
   padding: 0 6px;
-  background-color: #722F37;
-}
-
-#custom-audiorec {
-  color:red;
-  margin: 4px 2px;
-  padding: 0 6px;
-  background-color: #722F37;
+  background-color: rgba(175,65,84,0.8);
 }
 
 #custom-launcher{
@@ -117,5 +96,5 @@
 }
 
 #temperature.critical {
-  color: @base0F;
+  color: #800020;
 }
