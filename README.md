@@ -7,3 +7,4 @@ Waybar
 
 Waybar (theme2)
 ![screenshot_20220722_194819](https://user-images.githubusercontent.com/92317276/185178605-72d9dc84-f94d-4e33-8b26-355cda8ad3b0.png)
+![image](https://user-images.githubusercontent.com/92317276/202684946-941c2a21-4e48-4a79-90cd-ef4a803ac5f9.png)
