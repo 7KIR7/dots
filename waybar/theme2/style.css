@@ -1,8 +1,7 @@
 * {
-  font-family: "JetBrainsMono Nerd Font", Roboto, Helvetica, Arial, sans-serif;
-  padding: 1px 5px;
-  color: white;
-  
+  font-family: JetBrainsMono;
+  padding: 1px 2px;
+  color: white; 
 }
 
 window#waybar {
@@ -11,7 +10,6 @@ window#waybar {
   font-weight: 600;
   background: transparent;
   border-radius: 40px;
-  
 }
 
 window#waybar.hidden {
@@ -39,20 +37,11 @@ label:focus {
   background-color: #000;
 }
 
-#battery.charging, #battery.plugged {
-  color: #00ffaa;
-}
-
-#battery.warning:not(.charging) {
+#battery.warning.charging *{
   color: white;
-  animation-name: blink;
-  animation-duration: 0.5s;
-  animation-timing-function: linear;
-  animation-iteration-count: infinite;
-  animation-direction: alternate;
 }
 
-#battery.critical {
+#battery.critical *{
   color: #e06c75;
 }
 
@@ -94,6 +83,7 @@ label:focus {
 .modules-right {
   margin-right: 5px;
 }
+
 /*ANIMATIONS*/
 @keyframes animate {
 	0% {
@@ -106,7 +96,6 @@ label:focus {
 		background-position: 0% 50%;
 	}
 }
-
 
 /*BORDER RADIUS*/
 #custom-launcher,
@@ -123,42 +112,25 @@ label:focus {
   border-radius: 10px 3px 10px 3px;
 }
 
-#custom-launcher{
+#custom-launcher* , #custom-power *{
   color: red;
-  font-size: 11px;
+  font-size: 15px;
 }
 
-#cpu {
-  background: #12d7f1;
+#cpu, #clock {
+  background: #6F8FAF;
 }
 
-#memory {
-  background: #ff5e78;
+#memory, #pulseaudio {
+  background: #D70040;
 }
 
-#disk {
-  background: #12f194;
-}
-
-#network {
-  background: #12f194;
-}
-
-#pulseaudio {
-  background: #ff5e78;
+#disk, #network {
+  background: #00A36C;
 }
 
 #battery {
-  background: #808000;
-}
-
-#clock {
-  background: #12d7f1;
-}
-
-#custom-power {
-  color: red;
-  font-size: 17px;
+  background: #F4BB44;
 }
 
 #workspaces {
@@ -169,17 +141,11 @@ label:focus {
   animation: animate 21s ease infinite;
 }
 
+#workspaces button.urgent * {
+  color: #630330;
+}
+
 #mpd {
-  color: violet;
   background: transparent;
   font-size: 12px;
-}
-
-#tray > .passive {
-    -gtk-icon-effect: dim;
-}
-
-#tray > .needs-attention {
-    -gtk-icon-effect: highlight;
-    background-color: #009acb;
 }

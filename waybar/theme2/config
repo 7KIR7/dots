@@ -2,6 +2,7 @@
 {
     "layer": "top",
     "position": "top",
+    "margin": "3, 0, 2, 0",
 
     // If height property would be not present, it'd be calculated dynamically
     "height": 10,
@@ -13,13 +14,12 @@
         "backlight#icon",
         "backlight#value",
         "disk",
-        "sway/mode",
+        "mpd",
     ],
  
 
     "modules-center": [
         "sway/workspaces",
-        "mpd",
     ],
 
     "modules-right": [
@@ -50,11 +50,11 @@
         "states": {
             // "good": 95,
             "warning": 30,
-            "critical": 15
+            "critical": 15,
         },
-        "format": "{capacity}% {icon}",
-        "format-charging": "{capacity}% ",
-        "format-plugged": "{capacity}% ",
+        "format": "{icon} {capacity}%",
+        "format-charging": " {capacity}%",
+        "format-plugged": " {capacity}%",
         // "format-good": "", // An empty format will hide the module
         // "format-full": "",
         "format-icons": ["", "", "", "", ""]
@@ -68,18 +68,15 @@
     "clock": {
         "interval": 1,
         "locale": "C", 
-        "format": "⏲ {:%I:%M %p}",
+        "format": "{:%I:%M %p}",
         "format-alt": " {:%a, %b %d}" // Icon: calendar-alt
     },
 
     "cpu": {
-        "interval": 5,
-        "format": "  {usage}% ({load})", // Icon: microchip
-        "states": {
-            "warning": 70,
-            "critical": 90,
-        },
-        "on-click": "kitty -e 'htop'",
+        "interval": 10,
+        "format": " {usage}%",
+        "max-length": 10,
+        "on-click": "kitty -e 'htop'"
     },
 
     "custom/keyboard-layout": {
@@ -104,22 +101,23 @@
     },
 
     "disk": {
-        "format": "🖴 {free} ({percentage_used}%)" //Icon: disk
+        "format": " {free}" 
     },
         
 
     "network": {
         "interval": 5,
-        "format-wifi": "  ({signalStrength}%)", // Icon: wifi
-        "format-ethernet": "  {ifname}: {ipaddr}/{cidr}", // Icon: ethernet
-        "format-disconnected": "⚠  Disconnected",
+        "format-wifi": " ({signalStrength}%)", // Icon: wifi
+        "format-ethernet": " {ifname}: {ipaddr}/{cidr}", // Icon: ethernet
+        "format-disconnected": "⚠ Disconnected",
         "tooltip-format": "{ifname}: {ipaddr}",
         "on-click": "kitty -e 'nmtui'",
     },
+
     "network#vpn": {
         "interface": "tun0",
-        "format": "  {essid} ({signalStrength}%)",
-        "format-disconnected": "⚠  Disconnected",
+        "format": " {essid} ({signalStrength}%)",
+        "format-disconnected": "⚠ Disconnected",
         "tooltip-format": "{ifname}: {ipaddr}/{cidr}",
     },
 
@@ -182,7 +180,7 @@
 
     "tray": {
         "icon-size": 18,
-        "spacing":8,
+        "spacing":5,
      },
 
     "backlight#icon": {
@@ -200,19 +198,19 @@
 
     "custom/firefox": {
         "format": " ",
-        "on-click": "exec firefox",
+        "on-click": "exec firefox", //choose a browser
         "tooltip": false
     },
 
     "custom/terminal": {
         "format": " ",
-        "on-click": "exec kitty",
+        "on-click": "exec kitty", //choose a terminal
         "tooltip": false
     },
 
     "custom/files": {
         "format": " ",
-        "on-click": "exec thunar",
+        "on-click": "exec thunar", //choose a file manager
         "tooltip": false
     },
 
@@ -230,8 +228,8 @@
 
     "mpd": {
       "format": "{stateIcon} {artist} - {title}",
-      "format-disconnected": "#505#",
-      "format-stopped": "⛔",
+      "format-disconnected": "🎶",
+      "format-stopped": "♪",
       "interval": 10,
       "consume-icons": {
         "on": " " // Icon shows only when "consume" is on
