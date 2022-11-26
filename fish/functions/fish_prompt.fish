@@ -1,1 +1,0 @@
-/home/kir7/.local/share/omf/themes/boxfish/fish_prompt.fish
