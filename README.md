@@ -6,4 +6,5 @@ Waybar
 [Wallpaper](https://i.ibb.co/bFDRdMB/backiee-129376-landscape.jpg)
 
 Waybar (theme2)
-![screenshot_20220722_194819](https://user-images.githubusercontent.com/92317276/185178605-72d9dc84-f94d-4e33-8b26-355cda8ad3b0.png)
+![image](https://user-images.githubusercontent.com/92317276/202685451-7a4eb4dd-bd5c-43cb-bc40-de0c8aecfa3e.png)
+
