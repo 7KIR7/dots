@@ -1,37 +1,46 @@
 // Global
 {
-    "layer": "top",
+    "layer": "bottom",
     "position": "top",
-    "margin": "3, 0, 2, 0",
+    "margin": "5, 0, 0, 0",
 
     // If height property would be not present, it'd be calculated dynamically
-    "height": 10,
 
     "modules-left": [
+        "sway/workspaces",
         "custom/launcher",
         "cpu",
         "memory",
-        "backlight#icon",
-        "backlight#value",
+        "backlight",
         "disk",
-        "mpd",
     ],
 
     "modules-center": [
-        "sway/workspaces",
+        "custom/firefox",
+        "custom/terminal",
+        "custom/files",
     ],
 
     "modules-right": [
         "network",
+        "battery",
         "idle_inhibitor",
         "pulseaudio",
-//        "custom/keyboard-layout",
-        "battery",
+        "custom/keyboard-layout",
         "clock",
         "tray",
         //"custom/weather",
         "custom/power",
     ],
+
+    //groups
+	"group/hardware": {
+		"modules": [
+			"cpu",
+			"memory",
+			"battery"
+		]
+	},
 
     // Modules
 
@@ -75,12 +84,25 @@
         "exec": "swaymsg -t get_inputs | grep -m1 'xkb_active_layout_name' | cut -d '\"' -f4",
         // Interval set only as a fallback, as the value is updated by signal
         "interval": 30,
-        "format": "  {}", // Icon: keyboard
-        // Signal sent by Sway key binding (~/.config/sway/key-bindings)
+        "format": " {}", // Icon: keyboard
         "signal": 1, // SIGHUP
         "tooltip": false,
-        "on-click": "~/.config/waybar/scripts/keyhint.sh",
     },
+
+  "wlr/taskbar": {
+  	"format": "{icon}",
+  	"icon-size": 14,
+  	"icon-theme": "Numix-Circle",
+  	"tooltip-format": "{title}",
+  	"on-click": "activate",
+  	"on-click-middle": "close",
+  	"ignore-list": [
+  	    "Alacritty"
+  	],
+  	"app_ids-mapping": {
+  		"firefoxdeveloperedition": "firefox-developer-edition"
+  	}
+  },
 
     "memory": {
         "interval": 5,
@@ -130,14 +152,14 @@
         "format": " {icon} ",
         //"format":"{icon}",
         "format-icons": {
-            "1": "♠",
-            "2": "♥",
-            "3": "♦",
-            "4": "♣",
-            "5": "☣",
-            "6": "☢",
-            "7": "⌘",
-            "8": "⌬",
+            "1": "α",
+            "2": "β",
+            "3": "γ",
+            "4": "δ",
+            "5": "ε",
+            "6": "ζ",
+            "7": "η",
+            "8": "θ",
         }
     },
 
@@ -159,7 +181,6 @@
         "default": ["", "", ""]
       },
       "on-click": "kitty alsamixer"
-
     },
 
     "custom/weather": {
@@ -175,18 +196,13 @@
         "spacing":5,
      },
 
-    "backlight#icon": {
-        "format": "{icon}",
-        "format-icons": [""],
-        "on-scroll-down": "brightnessctl -c backlight set 1%-",
-        "on-scroll-up": "brightnessctl -c backlight set +1%"
-    },
-
-    "backlight#value" :{
-         "format": "{percent}%",
-         "on-scroll-down": "brightnessctl -c backlight set 1%-",
-         "on-scroll-up": "brightnessctl -c backlight set +1%"
-    },
+  "backlight": {
+      "device": "intel_backlight",
+      "format": "{icon} {percent}%",
+       "format-icons": ["☀️", ""],
+       "on-scroll-down": "brightnessctl -c backlight set 1%-",
+       "on-scroll-up": "brightnessctl -c backlight set +1%"
+  },
 
     "custom/firefox": {
         "format": " ",
@@ -204,45 +220,6 @@
         "format": " ",
         "on-click": "exec thunar", //choose a file manager
         "tooltip": false
-    },
-
-    "custom/launcher": {
-        "format":"",
-        "on-click": "exec wofi -c ~/.config/wofi/config -I",
-        "tooltip": false,
-    },
-
-    "custom/power": {
-        "format":"⏻",
-        "on-click": "exec ~/.config/waybar/scripts/power-menu.sh",
-        "tooltip": false,
-    },
-
-    "mpd": {
-      "format": "{stateIcon} {artist} - {title}",
-      "format-disconnected": "🎶",
-      "format-stopped": "♪",
-      "interval": 10,
-      "consume-icons": {
-        "on": " " // Icon shows only when "consume" is on
-      },
-      "random-icons": {
-        "off": "<span color=\"#f53c3c\"></span> ", // Icon grayed out when "random" is off
-        "on": " "
-      },
-      "repeat-icons": {
-        "on": " "
-      },
-      "single-icons": {
-        "on": "1 "
-      },
-      "state-icons": {
-        "paused": "",
-        "playing": ""
-      },
-      "tooltip-format": "MPD (connected)",
-      "tooltip-format-disconnected": "MPD (disconnected)",
-      "max-length": 60
     },
 
 }

@@ -1,15 +1,14 @@
 * {
   font-family: JetBrainsMono;
   padding: 1px 2px;
-  color: white; 
+  color: white;
 }
 
 window#waybar {
-  font-size: 14px;
+  font-size: 12px;
   color: white;
-  font-weight: normal;
-  background: transparent;
-  border-radius: 40px;
+  border-radius: 15px;
+  background-color: #161925;
 }
 
 window#waybar.hidden {
@@ -29,13 +28,9 @@ window#waybar.hidden {
 #custom-power {
   color: black;
   background-color: #24283b;
-  border-radius: 20px;
-  margin: 1 9px;
+  margin: 1px 5px;
 }
 
-label:focus {
-  background-color: #000;
-}
 
 #battery.warning.charging *{
   color: white;
@@ -69,19 +64,6 @@ label:focus {
   background-color:white;
 }
 
-/*ANIMATIONS*/
-@keyframes animate {
-	0% {
-		background-position: 0% 50%;
-	}
-	50% {
-		background-position: 100% 50%;
-	}
-	100% {
-		background-position: 0% 50%;
-	}
-}
-
 /*BORDER RADIUS*/
 #custom-launcher,
 #cpu,
@@ -97,9 +79,8 @@ label:focus {
   border-radius: 10px 3px 10px 3px;
 }
 
-#custom-launcher* , #custom-power *{
+#custom-power *{
   color: red;
-  font-size: 15px;
 }
 
 #cpu, #clock {
@@ -120,17 +101,11 @@ label:focus {
 
 #workspaces {
   border-radius: 10px;
-  font-size: 15px;
-  background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
-  background-size: 400% 400%;
-  animation: animate 21s ease infinite;
+  margin: 2px 0px;
+  background: linear-gradient(90deg, #1CB5E0 0%, #000851 100%);
+  background-size: 300% 300%;
 }
 
 #workspaces button.urgent * {
   color: #630330;
-}
-
-#mpd {
-  background: transparent;
-  font-size: 12px;
 }

@@ -1,0 +1,128 @@
+{
+    "position": "left",
+    "margin": "5, 5",
+    "modules-left": ["sway/mode","pulseaudio","cpu", "tray",],
+    "modules-center": ["custom/browser","custom/terminal","sway/workspaces","custom/files","custom/launcher",],
+    "modules-right": ["memory","battery", "idle_inhibitor", "clock",],
+
+// modules
+    "sway/mode": {
+      "format": "{}",
+      "max-length": 50
+    },
+
+    "sway/workspaces": {
+    	"all-outputs": true,
+	"format": "{icon}",
+        "format-icons": {
+            "1": "α",
+            "2": "β",
+            "3": "γ",
+            "4": "δ",
+            "5": "ε",
+            "6": "ζ",
+            "7": "η",
+            "8": "θ",
+        }
+    },
+
+    "clock": {
+        "format": "{:%H\n--\n%M}",
+        "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
+    },
+
+    "tray": {
+        "icon-size": 17,
+        "spacing":5,
+     },
+
+    "cpu": {
+        "interval": 10,
+        "format":" {usage}%",
+        "max-length": 20,
+        "rotate": 90,
+        "on-click": "kitty -e 'htop'"
+    },
+
+    "memory": {
+        "interval": 10,
+        "format": " {percentage}%",
+        "max-length": 15,
+        "tooltip": true,
+        "warning": 70,
+        "critical": 90,
+        "tooltip-format": "{used:0.1f}G",
+        "rotate": 90,
+    },
+
+    "battery": {
+        "states": {
+            //"good": 95,
+            "warning": 30,
+            "critical": 15
+        },
+        "format": "{icon} {capacity}",
+        "format-charging": "⚡ {capacity}%",
+        "format-plugged": "⚡ {capacity}%",
+        // "format-good": "", // An empty format will hide the module
+        // "format-full": "",
+        "format-icons": ["", "", "", "", ""]
+        //"format-alt": "{time}",
+    },
+
+    "pulseaudio": {
+      // "scroll-step": 1, // %, can be a float
+      "format": "{icon} {volume}%\n{format_source}",
+      "format-bluetooth": "{icon} {volume}% {format_source}",
+      "format-bluetooth-muted": " {format_source}",
+      "format-muted": " {format_source}",
+      "format-source": " {volume}%",
+      "format-source-muted": "",
+      "rotate": 90,
+      "format-icons": {
+        "headphone": "",
+        "hands-free": "",
+        "headset": "🎧",
+        "phone": "",
+        "portable": "",
+        "car": "",
+        "default": ["", "", ""]
+
+      },
+      "on-click": "pavucontrol"
+    },
+
+    "idle_inhibitor": {
+        "format": "{icon}",
+        "format-icons":{
+            "activated": "",
+            "deactivated": ""
+        }
+    },
+
+// custom modules
+    "custom/browser": {
+        "format": " ",
+        "on-click": "exec firefox", //choose a browser
+        "tooltip": false,
+    },
+
+    "custom/terminal": {
+        "format": " ",
+        "on-click": "exec kitty", //choose a terminal
+        "tooltip": false,
+    },
+
+    "custom/files": {
+        "format": " ",
+        "on-click": "exec thunar", //choose a file manager
+        "tooltip": false,
+    },
+
+    "custom/launcher": {
+        "format":"",
+        "on-click": "exec wofi -c ~/.config/wofi/config -I",
+        "tooltip": false,
+    },
+
+}

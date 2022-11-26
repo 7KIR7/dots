@@ -1,0 +1,66 @@
+* {
+  font-family: JetBrainsMono;
+  padding: 1px 2px;
+  color: white;
+}
+
+window#waybar {
+  font-size: 10px;
+  color: white;
+  border-radius: 8px;
+  background: linear-gradient(45deg, rgba(36, 40, 59, 0.8) 7.5%, rgba(26,27, 38, 0.9) 0%);
+}
+
+window#waybar.hidden {
+  opacity: 0.2;
+}
+
+#battery, 
+#network{
+  margin: 4px 0px;
+  font-size: 10px;
+}
+
+#pulseaudio,
+#cpu,
+#memory,
+#clock{
+  margin: 3px;
+  font-size: 11px;
+}
+
+
+#battery.warning.charging *{
+  color: white;
+}
+
+#battery.critical *{
+  color: #e06c75;
+}
+
+#workspaces {
+  font-size: 15px;
+  margin: 40px 0px;
+  color: black;
+}
+
+#workspaces button.focused * {
+  color: rgba(0, 0, 0, 0.5);
+}
+
+#workspaces button.urgent * {
+  color: #630330;
+}
+
+#workspaces button:hover {
+  background: transparent;
+  border-bottom: 1.5px solid #6272A4;
+}
+
+/*custom modules*/
+#custom-browser,
+#custom-terminal,
+#custom-files,
+#custom-launcher{
+  font-size: 15px;
+}
