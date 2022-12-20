@@ -1,4 +1,5 @@
 # waybar themes
+**_Font Awesome_ is required.**
 
 ## Previews
 **bluish**
