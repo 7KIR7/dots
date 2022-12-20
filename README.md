@@ -1,10 +1,19 @@
-# dots
-my dotfiles
+# waybar themes
+**_Font Awesome_ is required.**
 
-Waybar
-![image](https://user-images.githubusercontent.com/92317276/201674532-0c08e406-0411-4e30-8e77-49524a73a07f.png)
-[Wallpaper](https://i.ibb.co/bFDRdMB/backiee-129376-landscape.jpg)
+## Previews
+**bluish**
+![image](https://user-images.githubusercontent.com/92317276/208711637-3648b5ba-b6a1-476f-8f5a-6d145120aa79.png)
 
-Waybar (theme2)
-![image](https://user-images.githubusercontent.com/92317276/202685451-7a4eb4dd-bd5c-43cb-bc40-de0c8aecfa3e.png)
 
+**awe**
+![image](https://user-images.githubusercontent.com/92317276/208711128-f14afe33-d15a-4ef9-b3c5-bfdc5e7c13df.png)
+
+
+**colorful**
+![image](https://user-images.githubusercontent.com/92317276/208712733-06bbdea9-2420-4141-854e-f16475c69639.png)
+
+
+**vertical waybar**
+
+![image](https://user-images.githubusercontent.com/92317276/208713080-7392f8fa-64d7-4665-9454-b56d96c2c60b.png)
