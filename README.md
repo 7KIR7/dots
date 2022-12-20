@@ -11,7 +11,7 @@
 
 
 **colorful**
-![image](https://user-images.githubusercontent.com/92317276/204092313-89856114-89d8-44bb-947b-5c1e547ba876.png)
+![image](https://user-images.githubusercontent.com/92317276/208712733-06bbdea9-2420-4141-854e-f16475c69639.png)
 
 
 **vertical waybar**
