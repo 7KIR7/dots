@@ -1,6 +1,6 @@
 * {
   font-family: JetBrainsMono;
-  padding: 1px 2px;
+  padding: 1px 4px;
   color: white; 
 }
 
@@ -27,7 +27,7 @@ window#waybar.hidden {
 #custom-launcher,
 #temperature,
 #custom-power {
-  color: black;
+  color: white;
   background-color: #24283b;
   border-radius: 20px;
   margin: 1 9px;
@@ -97,7 +97,7 @@ label:focus {
   border-radius: 10px 3px 10px 3px;
 }
 
-#custom-launcher* , #custom-power *{
+#custom-launcher , #custom-power {
   color: red;
   font-size: 15px;
 }
@@ -128,6 +128,10 @@ label:focus {
 
 #workspaces button.urgent * {
   color: #630330;
+}
+
+#idle_inhibitor {
+    padding: 0px;
 }
 
 #mpd {

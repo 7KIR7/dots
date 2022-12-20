@@ -5,7 +5,7 @@
 }
 
 window#waybar {
-  font-size: 10px;
+  font-size: 12px;
   color: white;
   border-radius: 8px;
   background: linear-gradient(45deg, rgba(36, 40, 59, 0.8) 7.5%, rgba(26,27, 38, 0.9) 0%);
@@ -45,7 +45,7 @@ window#waybar.hidden {
 }
 
 #workspaces button.focused * {
-  color: rgba(0, 0, 0, 0.5);
+  color: rgba(150, 215, 0, 0.3);
 }
 
 #workspaces button.urgent * {
@@ -63,4 +63,6 @@ window#waybar.hidden {
 #custom-files,
 #custom-launcher{
   font-size: 15px;
+  margin: 3px 0px;
 }
+

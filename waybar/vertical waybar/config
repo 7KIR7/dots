@@ -62,8 +62,8 @@
             "critical": 15
         },
         "format": "{icon} {capacity}",
-        "format-charging": "⚡ {capacity}%",
-        "format-plugged": "⚡ {capacity}%",
+        "format-charging": " {capacity}%",
+        "format-plugged": " {capacity}%",
         // "format-good": "", // An empty format will hide the module
         // "format-full": "",
         "format-icons": ["", "", "", "", ""]
@@ -102,25 +102,25 @@
 
 // custom modules
     "custom/browser": {
-        "format": " ",
+        "format": "",
         "on-click": "exec firefox", //choose a browser
         "tooltip": false,
     },
 
     "custom/terminal": {
-        "format": " ",
+        "format": "",
         "on-click": "exec kitty", //choose a terminal
         "tooltip": false,
     },
 
     "custom/files": {
-        "format": " ",
+        "format": "",
         "on-click": "exec thunar", //choose a file manager
         "tooltip": false,
     },
 
     "custom/launcher": {
-        "format":"",
+        "format":"",
         "on-click": "exec wofi -c ~/.config/wofi/config -I",
         "tooltip": false,
     },

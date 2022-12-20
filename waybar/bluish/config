@@ -85,7 +85,7 @@
         "format": "{icon}",
         "format-alt": "{ipaddr}/{cidr} {icon}",
         "format-alt-click": "click-right",
-        "format-wifi": "直 ({signalStrength}%)",
+        "format-wifi": "{icon} ({signalStrength}%)",
         "format-icons": {
             "wifi": ["睊", "直" ,""],
             "ethernet": [""],
@@ -176,8 +176,8 @@
         "on": "1 "
       },
       "state-icons": {
-        "paused": "⏸️",
-        "playing": "▶️"
+        "paused": "",
+        "playing": ""
       },
       "tooltip-format": "MPD (connected)",
       "tooltip-format-disconnected": "MPD (disconnected)",

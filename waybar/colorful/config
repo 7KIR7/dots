@@ -50,7 +50,7 @@
             "critical": 15,
         },
         "format": "{icon} {capacity}%",
-        "format-charging": " {capacity}%",
+        "format-charging": " {capacity}%",
         "format-plugged": " {capacity}%",
         // "format-good": "", // An empty format will hide the module
         // "format-full": "",
@@ -130,14 +130,14 @@
         "format": " {icon} ",
         //"format":"{icon}",
         "format-icons": {
-            "1": "♠",
-            "2": "♥",
-            "3": "♦",
-            "4": "♣",
-            "5": "☣",
-            "6": "☢",
-            "7": "⌘",
-            "8": "⌬",
+            "1": "",
+            "2": "",
+            "3": "",
+            "4": "",
+            "5": "",
+            "6": "",
+            "7": "",
+            "8": "",
         }
     },
 
@@ -177,7 +177,7 @@
 
     "backlight#icon": {
         "format": "{icon}",
-        "format-icons": [""],
+        "format-icons": [""],
         "on-scroll-down": "brightnessctl -c backlight set 1%-",
         "on-scroll-up": "brightnessctl -c backlight set +1%"
     },
