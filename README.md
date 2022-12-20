@@ -15,4 +15,5 @@
 
 
 **vertical waybar**
+
 ![image](https://user-images.githubusercontent.com/92317276/208713080-7392f8fa-64d7-4665-9454-b56d96c2c60b.png)
