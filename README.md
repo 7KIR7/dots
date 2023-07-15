@@ -14,7 +14,10 @@
 ![image](https://user-images.githubusercontent.com/92317276/208712733-06bbdea9-2420-4141-854e-f16475c69639.png)
 
 
-**vertical waybar**
+**minimal**
+![image](https://github.com/7KIR7/dots/assets/92317276/b05aff8d-19f2-439d-9ce0-21d540865a1a)
 
+
+**vertical waybar**
 ![image](https://user-images.githubusercontent.com/92317276/208713080-7392f8fa-64d7-4665-9454-b56d96c2c60b.png)
  
