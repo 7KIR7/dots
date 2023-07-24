@@ -1,11 +1,11 @@
 * {
   font-family: JetBrainsMono;
   color: #e5e9f0;
-  background: transparent;
+
 }
 
 #window {
-  background: rgba(41, 46, 66, 0.2);
+  background: rgba(41, 46, 66, 0.5);
   margin: auto;
   padding: 10px;
   border-radius: 20px;
