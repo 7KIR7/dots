@@ -11,6 +11,7 @@ window#waybar {
 
 #workspaces{
     margin-top: 3px;
+    margin-bottom: 2px;
     margin-right: 10px;
     margin-left: 25px;
 }
