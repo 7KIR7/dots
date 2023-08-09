@@ -15,14 +15,15 @@
     exec_always --no-startup-id ~/.azotebg
 
 #Set Path:
-    set $lock_path ~/.config/sway/scripts/lock.sh
-    set $idle_path ~/.config/sway/scripts/idle.sh
+    set $lock_path ~/.config/scripts/lock.sh
+    set $idle_path ~/.config/scripts/idle.sh
 
 #start always
     exec_always --no-startup-id dunst
-    exec_always --no-startup-id autotiling
-    exec_always --no-startup-id ~/.config/sway/scripts/idle.sh
+    exec_always --no-startup-id autotiling-rs
+    exec_always --no-startup-id $idle_path
     exec_always --no-startup-id ~/.config/sway/scripts/battery-low-notify.sh
+    exec_always --no-startup-id ~/.config/sway/scripts/low_bat_notifier.sh
 #    exec_always --no-startup-id easyeffects --gapplication-service
     exec_always brightnessctl set 10%
 #    exec_always thunar --daemon
@@ -38,6 +39,8 @@
 bar {
     swaybar_command waybar
 }
+
+bindsym $mod+N exec "killall -SIGUSR1 waybar"
 
 #█▄▄ █▀█ █▀█ █▀▄ █▀▀ █▀█
 #█▄█ █▄█ █▀▄ █▄▀ ██▄ █▀▄
@@ -116,8 +119,8 @@ bar {
     # focus_follows_mouse no
 
     gaps {
-      inner 4
-      outer 4
+      inner 3
+      outer 3
     }
 
     # set default desktop layout (default is tiling)
@@ -132,8 +135,8 @@ bar {
     bindsym $mod+f fullscreen toggle
 
 # change container layout (stacked, tabbed, toggle split)
-    #bindsym $mod+s layout stacking
-    #bindsym $mod+e layout tabbed
+    #bindsym $mod+g layout stacking
+    #bindsym $mod+h layout tabbed
     #bindsym $mod+w layout toggle split
 
 # toggle tiling / floating
@@ -303,13 +306,12 @@ input * {
 
 ##capture selected area and saves
     bindsym $mod+Shift+Print exec IMG=~/Pictures/screenshot_$(date +%Y%m%d_%H%M%S).png && grim -g "$(slurp)" $IMG && wl-copy < $IMG && notify-send "Screenshot saved"
-    bindsym Control+Shift+Print exec IMG=~/Pictures/nwa/screenshot_$(date +%Y%m%d_%H%M%S).png && grim -g "$(slurp)" $IMG && wl-copy < $IMG && notify-send "Screenshot saved"
 
 #Screenrecord
-    set $screenrecord wf-recorder -g "$(slurp)" --audio=alsa_output.pci-0000_08_00.6.analog-stereo.monitor -f ~/Videos/wf-recorder/mov-$(date +"%Y-%m-%d--%H-%M-%S.mp4")
+    set $screenrecord wf-recorder -g "$(slurp)" --audio=alsa_output.pci-0000_08_00.6.analog-stereo.monitor -f ~/Videos/record/mov-$(date +"%Y-%m-%d--%H-%M-%S.mp4")
     bindsym $mod+v exec $screenrecord
-    bindsym Shift+Control+BackSpace exec killall -s SIGINT wf-recorder; exec killall ffmpeg && notify-send "Recording Saved"
+    bindsym $mod+BackSpace exec killall -s SIGINT wf-recorder; exec killall ffmpeg && notify-send "Recording Saved"
 
 #Audiorecord
-    set $audiorecord ffmpeg -f pulse -i alsa_output.pci-0000_00_1b.0.analog-stereo.monitor ~/Audio/aud-$(date +%Y%m%d_%H%M%S).mp3
+    set $audiorecord ffmpeg -f pulse -i alsa_output.pci-0000_00_1b.0.analog-stereo.monitor -ac 2 ~/Audio/aud-$(date +%Y%m%d_%H%M%S).mp3
     bindsym $mod+a exec $audiorecord
