@@ -6,7 +6,7 @@
 "margin-top":0,
 
 "modules-left": ["sway/mode","cpu","memory","network","mpd"],
-"modules-center": ["sway/workspaces","wlr/workspaces"],
+"modules-center": ["sway/workspaces","hyprland/workspaces"],
 "modules-right":  ["tray","idle_inhibitor","pulseaudio","backlight","battery","clock"],
 
 "battery": {
@@ -20,9 +20,13 @@
   "format-alt": "{icon} {time}",
   "format-icons": ["", "", "", "", "", "", ""]
 },
-"wlr/workspaces": {
+"hyprland/workspaces": {
      "sort-by-name": true,
      "on-click": "activate"
+},
+"hyprland/window": {
+    "max-length": 200,
+    "separate-outputs": true
 },
 "sway/mode": {
     "format": "<span style=\"italic\">{}</span>"
