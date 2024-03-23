@@ -1,3 +1,7 @@
+# fuzzel theme [Best applauncher]([https://www.google.com](https://codeberg.org/dnkl/fuzzel))
+![image](https://github.com/7KIR7/dots/assets/92317276/07cfc70b-a6eb-4d15-82fa-6d649f62a2f5)
+
+
 # waybar themes
 **_Font Awesome_ is required.**
 
