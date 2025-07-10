@@ -45,6 +45,7 @@ window#waybar {
 #custom-audiorec,
 #battery, 
 #clock, 
+#idle_inhibitor,
 #network {
 	padding: 0 10px;
 }
